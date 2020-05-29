@@ -3,11 +3,10 @@ public class Test {
 	
 	String field;
 	
-	String field2;
-	
-	String field3;
-	
-	String field4;
+	private void syso() {
+		// TODO Auto-generated method stub
+
+	}
 
 
 }
