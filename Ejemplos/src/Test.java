@@ -5,6 +5,6 @@ public class Test {
 	
 	String field2;
 	
-	String field4;
+	String field4;//
 
 }
