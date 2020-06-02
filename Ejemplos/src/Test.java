@@ -1,11 +1,13 @@
 
 public class Test {
 	
-	String field;
-	
-	private void syso() {
-		//estoy en mi rama develop
-	}
+	public void run() {
 
+		Prueba.setNumero(5);
+		Prueba.doSomething("hola");
+	
+				
+	}
+		
 
 }
