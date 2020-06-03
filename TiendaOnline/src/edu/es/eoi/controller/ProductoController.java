@@ -7,16 +7,10 @@ import edu.es.eoi.service.ProductoService;
 
 public class ProductoController {
 	
-	private Producto[] almacen;	
-	private Carrito carrito;
-	private ListaDeseos deseos;	
 	private ProductoService service;
 
 	public ProductoController(Producto[] almacen, Carrito carrito, ListaDeseos deseos) {
 		super();
-		this.almacen = almacen;
-		this.carrito = carrito;
-		this.deseos = deseos;
 		this.service= new ProductoService(almacen, carrito, deseos);
 	}
 	

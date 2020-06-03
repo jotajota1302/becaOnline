@@ -14,6 +14,7 @@ public class MenuPrincipalView {
 		System.out.println("2-Buscar articulos: ");
 		System.out.println("3-Realizar pedido: ");
 
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int opcion = scanner.nextInt();
 

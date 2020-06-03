@@ -17,6 +17,7 @@ public class ProductoView {
 	public static Producto introduceReferencia() {
 		
 		System.out.println("Introduce la referencia del producto: ");
+		@SuppressWarnings("resource")
 		Scanner scanner= new Scanner(System.in);
 		return App.productoController.buscar(scanner.next());
 		
