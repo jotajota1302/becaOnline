@@ -20,11 +20,14 @@ public class Batidora extends ProductoElectronico {
 
 	@Override
 	public String toString() {
-		return "Batidora [Revoluciones=" + getRevoluciones() + ", Modelo"
-				+ getModelo() + ", Battery" + getBattery() + ", Detalle" + getDetalle() + ", getNombre"
-				+ getNombre() + ", Referencia" + getReferencia() + ", Precio" + getPrecio()
-				+ ", Descripcion" + getDescripcion() + ", Stock" + getStock();
+		return "Batidora [revoluciones=" + revoluciones + ", getRevoluciones()=" + getRevoluciones() + ", getModelo()="
+				+ getModelo() + ", getBattery()=" + getBattery() + ", getDetalle()=" + getDetalle() + ", getNombre()="
+				+ getNombre() + ", getReferencia()=" + getReferencia() + ", getPrecio()=" + getPrecio()
+				+ ", getDescripcion()=" + getDescripcion() + ", getStock()=" + getStock() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
+
+	
 	
 	
 	

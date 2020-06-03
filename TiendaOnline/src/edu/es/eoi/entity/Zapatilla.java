@@ -20,11 +20,14 @@ public class Zapatilla extends ProductoDeportivo {
 
 	@Override
 	public String toString() {
-		return "Zapatilla " + talla + "Talla=" + getTalla() + "Marca=" + getMarca()
-				+ "Nombre=" + getNombre() + "Referencia=" + getReferencia() + "Precio="
-				+ getPrecio() + "Descripcion=" + getDescripcion() + "Stock=" + getStock()
-				+ "Detalle=" + getDetalle() + "]";
+		return "Zapatilla [talla=" + talla + ", getTalla()=" + getTalla() + ", getMarca()=" + getMarca()
+				+ ", getNombre()=" + getNombre() + ", getReferencia()=" + getReferencia() + ", getPrecio()="
+				+ getPrecio() + ", getDescripcion()=" + getDescripcion() + ", getStock()=" + getStock()
+				+ ", getDetalle()=" + getDetalle() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
+
+	
 	
 	
 	

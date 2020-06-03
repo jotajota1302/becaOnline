@@ -20,12 +20,15 @@ public class Ordenador extends ProductoElectronico {
 
 	@Override
 	public String toString() {
-		return "Ordenador "+ sistemaOperativo + "SistemaOperativo=" + getSistemaOperativo()
-				+ "Modelo=" + getModelo() + "Battery=" + getBattery() + "Detalle=" + getDetalle()
-				+ "Nombre=" + getNombre() + "Referencia=" + getReferencia() + "Precio="
-				+ getPrecio() + "Descripcion=" + getDescripcion() + "Stock=" + getStock()
+		return "Ordenador [sistemaOperativo=" + sistemaOperativo + ", getSistemaOperativo()=" + getSistemaOperativo()
+				+ ", getModelo()=" + getModelo() + ", getBattery()=" + getBattery() + ", getDetalle()=" + getDetalle()
+				+ ", getNombre()=" + getNombre() + ", getReferencia()=" + getReferencia() + ", getPrecio()="
+				+ getPrecio() + ", getDescripcion()=" + getDescripcion() + ", getStock()=" + getStock()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
+
+	
 	
 	
 }
