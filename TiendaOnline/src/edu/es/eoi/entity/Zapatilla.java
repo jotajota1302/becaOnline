@@ -17,6 +17,15 @@ public class Zapatilla extends ProductoDeportivo {
 		super(nombre, referencia, precio, descripcion, stock, marca);
 		this.talla = talla;
 	}
+
+	@Override
+	public String toString() {
+		return "Zapatilla " + talla + "Talla=" + getTalla() + "Marca=" + getMarca()
+				+ "Nombre=" + getNombre() + "Referencia=" + getReferencia() + "Precio="
+				+ getPrecio() + "Descripcion=" + getDescripcion() + "Stock=" + getStock()
+				+ "Detalle=" + getDetalle() + "]";
+	}
+	
 	
 	
 }

@@ -1,6 +1,8 @@
 package edu.es.eoi.controller;
 
+import edu.es.eoi.App;
 import edu.es.eoi.entity.Producto;
+import edu.es.eoi.view.ListadoProductosView;
 import edu.es.eoi.view.MenuPrincipalView;
 import edu.es.eoi.view.ProductoView;
 
@@ -11,6 +13,8 @@ public class MenuController {
 		switch (opcion) {
 		case 0:
 			System.out.println("Navegar a menu 0");
+			ListadoProductosView.imprimirProductos(App.almacen);
+			MenuPrincipalView.imprimirMenu();
 			break;
 		case 1:
 			System.out.println("Navegar a menu 1");

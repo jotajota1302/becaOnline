@@ -17,6 +17,15 @@ public class Ordenador extends ProductoElectronico {
 		super(nombre, referencia, precio, descripcion, stock, modelo, battery);
 		this.sistemaOperativo = sistemaOperativo;
 	}
+
+	@Override
+	public String toString() {
+		return "Ordenador "+ sistemaOperativo + "SistemaOperativo=" + getSistemaOperativo()
+				+ "Modelo=" + getModelo() + "Battery=" + getBattery() + "Detalle=" + getDetalle()
+				+ "Nombre=" + getNombre() + "Referencia=" + getReferencia() + "Precio="
+				+ getPrecio() + "Descripcion=" + getDescripcion() + "Stock=" + getStock()
+				+ "]";
+	}
 	
 	
 }
