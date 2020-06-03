@@ -1,5 +1,8 @@
 package edu.es.eoi.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
@@ -7,12 +10,12 @@ import edu.es.eoi.repository.ProductoRepository;
 
 public class ProductoService {
 
-	private Producto[] almacen;	
+	private List<Producto> almacen;	
 	private Carrito carrito;
 	private ListaDeseos deseos;
 	private ProductoRepository repository;
 	
-	public ProductoService(Producto[] almacen, Carrito carrito, ListaDeseos deseos) {
+	public ProductoService(List<Producto> almacen, Carrito carrito, ListaDeseos deseos) {
 		super();
 		this.almacen = almacen;
 		this.carrito = carrito;
@@ -21,12 +24,9 @@ public class ProductoService {
 	}
 	
 	public void comprar(Producto producto) {
+			
+		carrito.getProductos().add(producto);
 		
-		for (int i = 0; i < carrito.getProductos().length; i++) {
-			if(carrito.getProductos()[i]==null) {
-				carrito.getProductos()[i]=producto;
-			}
-		}
 	}
 	
 	public Producto buscar(String referencia) {
@@ -46,18 +46,14 @@ public class ProductoService {
 	
 	public void addToListaDeseos(Producto producto) {
 		
-		for (int i = 0; i < deseos.getProductos().length; i++) {
-			if(deseos.getProductos()[i]==null) {
-				deseos.getProductos()[i]=producto;
-			}
-		}
+		deseos.getProductos().add(producto);
 	}
 
-	public Producto[] getAlmacen() {
+	public List<Producto> getAlmacen() {
 		return almacen;
 	}
 
-	public void setAlmacen(Producto[] almacen) {
+	public void setAlmacen(ArrayList<Producto> almacen) {
 		this.almacen = almacen;
 	}
 

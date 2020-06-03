@@ -1,12 +1,11 @@
 
 public class Test {
 	
-	public void run() {
-
-		Prueba.setNumero(5);
-		Prueba.doSomething("hola");
-	
-				
+	public static void main(String[] args) {
+		
+		PruebaInterface prueba= new PruebaEspecifica();
+		prueba.doSomething("");
+		
 	}
 		
 

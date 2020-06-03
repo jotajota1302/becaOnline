@@ -1,18 +1,18 @@
 package edu.es.eoi.view;
 
+import java.util.List;
+
 import edu.es.eoi.entity.Producto;
 
 public class ListadoProductosView {
 	
 	
-	public static void imprimirProductos(Producto[] productos) {
+	public static void imprimirProductos(List<Producto> productos) {
 		
 		System.out.println("Estos son todos mis productos: ");
 		
-		for (int i = 0; i < productos.length; i++) {
-			if(productos[i]!=null){
-				System.out.println(productos[i]);
-			}
+		for (Producto producto : productos) {
+			System.out.println(producto);
 		}
 		
 	}

@@ -1,20 +1,22 @@
 package edu.es.eoi.entity;
 
+import java.util.ArrayList;
+
 public class Carrito {
 	
-	private Producto[] productos;
+	private ArrayList<Producto> productos;
 
-	public Producto[] getProductos() {
+	public ArrayList<Producto> getProductos() {
 		return productos;
 	}
 	
 
-	public Carrito(Producto[] productos) {
+	public Carrito(ArrayList<Producto> productos) {
 		super();
 		this.productos = productos;
 	}
 
-	public void setProductos(Producto[] productos) {
+	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
 	}
 

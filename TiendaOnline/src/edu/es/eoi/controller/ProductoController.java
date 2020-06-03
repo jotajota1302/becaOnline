@@ -1,5 +1,8 @@
 package edu.es.eoi.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
@@ -9,7 +12,7 @@ public class ProductoController {
 	
 	private ProductoService service;
 
-	public ProductoController(Producto[] almacen, Carrito carrito, ListaDeseos deseos) {
+	public ProductoController(List<Producto> almacen, Carrito carrito, ListaDeseos deseos) {
 		super();
 		this.service= new ProductoService(almacen, carrito, deseos);
 	}

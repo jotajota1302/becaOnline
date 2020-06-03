@@ -6,9 +6,9 @@ public class Maquina {
 	
 	private boolean tieneCambio;
 	
-	private  Producto[][] productos= new Producto[5][10];
+	private  ArrayList<Producto>[] productos= new Producto[5][10];
 	
-	private Producto[] vendidos= new Producto[500];
+	private ArrayList<Producto> vendidos= new Producto[500];
 	
 	public void vender(Producto producto) {
 		
@@ -71,11 +71,11 @@ public class Maquina {
 		this.tieneCambio = tieneCambio;
 	}
 
-	public Producto[][] getProductos() {
+	public ArrayList<Producto>[] getProductos() {
 		return productos;
 	}
 
-	public void setProductos(Producto[][] productos) {
+	public void setProductos(ArrayList<Producto>[] productos) {
 		this.productos = productos;
 	}
 

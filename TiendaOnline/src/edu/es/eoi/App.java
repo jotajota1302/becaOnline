@@ -1,5 +1,8 @@
 package edu.es.eoi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.es.eoi.controller.ProductoController;
 import edu.es.eoi.entity.Batidora;
 import edu.es.eoi.entity.Carrito;
@@ -12,11 +15,11 @@ import edu.es.eoi.view.MenuPrincipalView;
 
 public class App {
 
-	public static Producto[] almacen;
+	public static List<Producto> almacen;
 	public static Carrito carrito;
 	public static ListaDeseos deseos;
 	public static ProductoController productoController;
-	
+
 	public static void main(String[] args) {
 	
 		inicializarApp();
@@ -29,9 +32,9 @@ public class App {
 	
 	public static void inicializarApp() {
 		
-		almacen=new Producto[1000];
-		carrito= new Carrito(new Producto[10]);
-		deseos= new ListaDeseos(new Producto[10]);
+		almacen=new ArrayList<Producto>();
+		carrito= new Carrito(new ArrayList<Producto>());
+		deseos= new ListaDeseos(new ArrayList<Producto>());
 		
 		Producto p1= new Batidora("Moulinex BC1", "4589865412", 40, "Maravillos batidora ultimo modelo", 20, "BC1", 220, 2500);
 		Producto p2= new Batidora("Aliexpress CC", "4454545452", 20, "Batidora regulera pero barata", 20, "CC2", 220, 2500);
@@ -39,13 +42,14 @@ public class App {
 		Producto p4= new Zapatilla("Nike Air Jordan", "4858789865", 100.0, "Jordan shoes", 10,"nike","42.5");
 		Producto p5= new Television("Samsung", "6734598409", 450, "TV 42'", 5, "SS1", 230, "HD4k", "Samsung");
 				
-		almacen[0]=p1;
-		almacen[1]=p2;
-		almacen[2]=p3;
-		almacen[3]=p4;
-		almacen[4]=p5;		
+		almacen.add(p1);
+		almacen.add(p2);
+		almacen.add(p3);
+		almacen.add(p4);
+		almacen.add(p5);
 		
-		productoController= new ProductoController(almacen, carrito, deseos);	
+		
+		productoController= new ProductoController(almacen, carrito, deseos);
 	
 	}
 	

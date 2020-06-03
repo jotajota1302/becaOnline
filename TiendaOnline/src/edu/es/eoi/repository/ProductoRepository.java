@@ -1,54 +1,46 @@
 package edu.es.eoi.repository;
 
+import java.util.List;
+
 import edu.es.eoi.entity.Producto;
 
 public class ProductoRepository {
 
-	private Producto[] almacen;
+	private List<Producto> almacen;
 
-	public ProductoRepository(Producto[] productos) {
+	public ProductoRepository(List<Producto> productos) {
 		super();
 		this.almacen = productos;
 	}
 
-	public void guardar(Producto producto) {
-		for (int i = 0; i < almacen.length; i++) {
-			if (almacen[i] == null) {
-				almacen[i] = producto;
-			}
-		}
+	public void guardar(Producto producto) {	
+		almacen.add(producto);
 	}
 
 	public Producto leer(String referencia) {
 
 		Producto producto = null;
-
-		for (int i = 0; i < almacen.length; i++) {
-			if (almacen[i].getReferencia().equals(referencia)) {
-				producto = almacen[i];
-				break;
+		for (Producto tmp : almacen) {
+			if(tmp.getReferencia().equals(referencia)) {
+				producto=tmp;
 			}
 		}
 		return producto;
 	}
 
-	public void actualizar(Producto producto) {
-
-		for (int i = 0; i < almacen.length; i++) {
-			if (almacen[i].getReferencia().equals(producto.getReferencia())) {
-				almacen[i] = producto;
-				break;
-			}
-		}
+	public void actualizar(Producto producto) {		
+		almacen.set(almacen.indexOf(producto),producto);		
 	}
 
 	public void borrar(String referencia) {
-		for (int i = 0; i < almacen.length; i++) {
-			if (almacen[i].getReferencia().equals(referencia)) {
-				almacen[i] = null;
-				break;
+		Producto producto = null;
+		
+		for (Producto tmp : almacen) {
+			if(tmp.getReferencia().equals(referencia)) {
+				producto=tmp;
 			}
 		}
+		almacen.remove(producto);
 	}
 
 }
