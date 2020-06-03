@@ -11,6 +11,11 @@ public class ListaDeseos {
 	public void setProductos(Producto[] productos) {
 		this.productos = productos;
 	}
+
+	public ListaDeseos(Producto[] productos) {
+		super();
+		this.productos = productos;
+	}
 	
 	
 

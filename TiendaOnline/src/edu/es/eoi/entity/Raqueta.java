@@ -16,6 +16,12 @@ public class Raqueta extends ProductoDeportivo {
 	public void setTensionCordaje(double tensionCordaje) {
 		this.tensionCordaje = tensionCordaje;
 	}
+	public Raqueta(String nombre, String referencia, double precio, String descripcion, int stock, String marca,
+			String marca2, double tensionCordaje) {
+		super(nombre, referencia, precio, descripcion, stock, marca);
+		marca = marca2;
+		this.tensionCordaje = tensionCordaje;
+	}
 	
 	
 }

@@ -2,13 +2,14 @@ package edu.es.eoi.view;
 
 import java.util.Scanner;
 
-import edu.es.eoi.controller.TiendaOnlineController;
+import edu.es.eoi.controller.MenuController;
 
-public class MenuPrincipal {
+public class MenuPrincipalView {
 
 	public static void imprimirMenu() {
 
 		System.out.println("Bienvenido a mi tienda, seleccion opcion: ");
+		System.out.println("0-Listar productos: ");
 		System.out.println("1-Registro: ");
 		System.out.println("2-Buscar articulos: ");
 		System.out.println("3-Realizar pedido: ");
@@ -16,20 +17,10 @@ public class MenuPrincipal {
 		Scanner scanner = new Scanner(System.in);
 		int opcion = scanner.nextInt();
 
-		TiendaOnlineController.gestionaOpcionMenu(opcion);
+		MenuController.gestionaOpcionMenu(opcion);
 
 	}
 
-	public static void imprimirOpcion1() {
-
-	}
-
-	public static void imprimirOpcion2() {
-
-	}
-
-	public static void imprimirOpcion3() {
-
-	}
+	
 
 }

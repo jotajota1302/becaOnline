@@ -42,6 +42,14 @@ public class Producto {
 	public String getDetalle() {		
 		return this.nombre.concat(", "+this.descripcion);
 	}
+	public Producto(String nombre, String referencia, double precio, String descripcion, int stock) {
+		super();
+		this.nombre = nombre;
+		this.referencia = referencia;
+		this.precio = precio;
+		this.descripcion = descripcion;
+		this.stock = stock;
+	}
 	
 }
 
