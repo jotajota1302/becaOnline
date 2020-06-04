@@ -40,7 +40,7 @@ public class Person implements Comparable<Person> {
 	public int compareTo(Person o) {
 		
 			return Integer.valueOf(this.age).compareTo(Integer.valueOf(o.getAge()));
-		
+			
 	}
 
 }
