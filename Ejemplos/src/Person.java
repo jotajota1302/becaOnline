@@ -4,6 +4,7 @@ public class Person implements Comparable<Person> {
 	private String name;
 	private int age;
 	private int year;
+	private String nif;
 
 	public Person(String name, int age, int year) {
 		super();
@@ -34,6 +35,15 @@ public class Person implements Comparable<Person> {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+	
+
+	public String getNif() {
+		return nif;
+	}
+
+	public void setNif(String nif) {
+		this.nif = nif;
 	}
 
 	@Override
