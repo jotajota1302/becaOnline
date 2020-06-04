@@ -1,14 +1,16 @@
 package edu.es.eoi.entities;
 
+import java.util.ArrayList;
+
 public class Maquina {
 	
 	private String marca;
 	
 	private boolean tieneCambio;
 	
-	private  ArrayList<Producto>[] productos= new Producto[5][10];
+	private  List<Producto>[] productos= new Producto[5][10];
 	
-	private ArrayList<Producto> vendidos= new Producto[500];
+	private List<Producto> vendidos= new Producto[500];
 	
 	public void vender(Producto producto) {
 		
