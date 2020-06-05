@@ -45,6 +45,13 @@ public class Person implements Comparable<Person> {
 	public void setNif(String nif) {
 		this.nif = nif;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + ", nif=" + nif + "]";
+	}
 
 	@Override
 	public int compareTo(Person o) {
