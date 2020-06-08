@@ -1,4 +1,6 @@
 import java.io.ObjectInputStream.GetField;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -13,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class FechasExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		
 		//para contenedor POJO o basicamente recipiente de datos
@@ -101,6 +103,18 @@ public class FechasExample {
 		if(cal.get(Calendar.DAY_OF_WEEK)==5||cal.get(Calendar.DAY_OF_WEEK)==6) {
 			System.out.println(" tu proximo cumpleaños cae en finde" + cal.get(Calendar.DAY_OF_WEEK) +","+cal.get(Calendar.MONTH));
 		}	
+		
+		
+		SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy zzzz");
+		
+//		String fecha= "01/07/2024";
+		
+//		Date date3=sdf.parse(fecha);
+		
+		Date date4= new GregorianCalendar(2018, 01, 06).getTime();
+		
+		System.out.println(sdf.format(date4));
+		
 		
 		
 	}
