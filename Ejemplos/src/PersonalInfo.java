@@ -34,11 +34,11 @@ public class PersonalInfo {
 		SimpleDateFormat printer= new SimpleDateFormat("'El' EEEEEEEEEE ,dd 'de' MMMMMMMM 'de' yyyy");
 		System.out.println("La fecha de nacimiento es: " + printer.format(date));
 		
-		//controlar las excepciones utilizando los bloques try catch, haciendola robusta antes errores de entrada de datos
+		//2-controlar las excepciones utilizando los bloques try catch, haciendola robusta antes errores de entrada de datos
 		
 	
 		
-		//Enum -> Lista de errores posibles fuera un ENUM y en el catch imprimamos el tipo de error que tenemos
+		//3-Enum -> Lista de errores posibles fuera un ENUM y en el catch imprimamos el tipo de error que tenemos
 		
 		//MalFormatoDeFecha
 		//NoVieneLaFecha
