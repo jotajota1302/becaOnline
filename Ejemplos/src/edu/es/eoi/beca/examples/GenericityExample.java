@@ -1,7 +1,5 @@
 package edu.es.eoi.beca.examples;
 
-import java.util.Set;
-
 public class GenericityExample {
 
 	public static void main(String[] args) {
