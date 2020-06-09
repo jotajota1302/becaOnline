@@ -3,8 +3,7 @@ package edu.es.eoi.beca.examples;
 	
 public class GenericContainer<T> {
 		
-	private T contenido;
-		
+	private T contenido;		
 	
 	
 	public GenericContainer() {
