@@ -11,7 +11,7 @@ public class App {
 	
 	public static void main(String[] args) throws FileNotFoundException, JavaLayerException {
 			
-		Player player= new Player(new FileInputStream(new File("C:/workspaces/becaOnline/mp3Player/src/main/resources/file.mp3")));
+		Player player= new Player(new FileInputStream(new File("C:/git beca online/becaOnline/mp3Player/src/main/resources/file.mp3")));
 		
 		player.play();
 		
