@@ -13,7 +13,7 @@ public class App {
 				
 		System.out.println("Welcome " + args[0]);
 		
-		Player player= new Player(new FileInputStream(new File("C:/workspaces/becaOnline/WhyMaven/src/ficheros/file.mp3")));
+		Player player= new Player(new FileInputStream(new File("C:/git beca online/becaOnline/WhyMaven/src/ficheros/file.mp3")));
 		
 		player.play();
 		
