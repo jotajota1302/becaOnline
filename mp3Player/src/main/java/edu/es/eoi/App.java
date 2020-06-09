@@ -15,6 +15,8 @@ public class App {
 		
 		player.play();
 		
+		// de una lista de sonidos, elegir uno y que se reproduzca ( UTILIZAR ENUMERADO para los sonidos )
+		
 	}
 
 }
