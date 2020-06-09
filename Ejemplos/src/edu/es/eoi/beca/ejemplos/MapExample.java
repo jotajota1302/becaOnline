@@ -1,3 +1,4 @@
+package edu.es.eoi.beca.ejemplos;
 import java.util.Map;
 import java.util.TreeMap;
 

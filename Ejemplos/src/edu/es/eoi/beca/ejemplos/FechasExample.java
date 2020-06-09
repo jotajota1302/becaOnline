@@ -1,3 +1,4 @@
+package edu.es.eoi.beca.ejemplos;
 import java.io.ObjectInputStream.GetField;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,3 +1,4 @@
+package edu.es.eoi.beca.ejemplos;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

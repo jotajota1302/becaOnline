@@ -1,3 +1,4 @@
+package edu.es.eoi.beca.ejemplos;
 
 public class Alumno {
 

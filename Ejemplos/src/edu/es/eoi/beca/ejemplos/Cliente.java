@@ -1,3 +1,4 @@
+package edu.es.eoi.beca.ejemplos;
 import java.util.Date;
 
 public class Cliente {
