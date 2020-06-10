@@ -15,6 +15,7 @@ public class ProductoView {
 		System.out.println("¿Quieres comprar el producto?");
 		System.out.println("1-Si");
 		System.out.println("2-No");
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		int opcion = scanner.nextInt();
 		if (opcion == 1) {			
