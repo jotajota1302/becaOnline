@@ -23,11 +23,19 @@ public class App {
 
 	public static void main(String[] args) {
 	
-		inicializarApp();
-		
-		MenuPrincipalView.imprimirMenu();
-		
-		main(null);
+		try {
+			inicializarApp();
+			
+			MenuPrincipalView.imprimirMenu();
+			
+			main(null);
+			
+		} catch (Exception e) {
+			System.out.println("Datos mal introducidos");
+		}
+		finally{
+			main(null);
+		}		
 		
 	}
 	
