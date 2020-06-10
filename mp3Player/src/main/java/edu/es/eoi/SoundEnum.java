@@ -2,7 +2,7 @@ package edu.es.eoi;
 
 public enum SoundEnum {
 	
-	PAJARO(1),GATO(2),GALLO(3),CABALLO(4);
+	PAJARO(1),GATO(2),GALLO(3),CABALLO(4),PERRO(5);
 	
 	private int valor;
 
