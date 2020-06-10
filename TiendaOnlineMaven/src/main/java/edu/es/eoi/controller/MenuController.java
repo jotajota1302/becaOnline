@@ -2,6 +2,7 @@ package edu.es.eoi.controller;
 
 import edu.es.eoi.App;
 import edu.es.eoi.entity.Producto;
+import edu.es.eoi.view.CestaView;
 import edu.es.eoi.view.ListadoProductosView;
 import edu.es.eoi.view.MenuPrincipalView;
 import edu.es.eoi.view.ProductoView;
@@ -18,11 +19,13 @@ public class MenuController {
 			break;
 		case 1:
 			System.out.println("Navegar a menu 1");
+			CestaView.imprimirCesta();
+			MenuPrincipalView.imprimirMenu();
 			break;
 		case 2:
 			System.out.println("Navegar a menu 2");	
 			Producto producto=ProductoView.introduceReferencia();
-			ProductoView.imprimirProducto(producto);
+			ProductoView.imprimirProducto(producto);		
 			MenuPrincipalView.imprimirMenu();
 			break;
 		case 3:
