@@ -13,7 +13,7 @@ public class Ahorcado {
 
 	public static void main(String[] args) throws IOException {
 
-		int numeroVidas=5; 
+		int numeroVidas=10; 
 		
 		List<String> palabras = new ArrayList<String>();
 
@@ -30,19 +30,27 @@ public class Ahorcado {
 		System.out.println("La palabra tiene " + solucion.length() +" letras");
 			
 		char[] letras = solucion.toCharArray();
-				
+		String utilizadas="";		
+		
 		while (numeroVidas>0) {					
 		
 			System.out.println("Introduce letra: ");
 			Scanner scanner= new Scanner(System.in);
 			char letra=scanner.next().toCharArray()[0];
 			
+			if(!utilizadas.contains(String.valueOf(letra))) {
+				utilizadas=utilizadas.concat(String.valueOf(letra));
+			}			
+			
 			char[] salida=solucion.toCharArray();
 			
 			for (int i = 0; i < letras.length; i++) {
-				if(letras[i]!=letra) {
-					salida[i]='_';
-				}
+				
+				if(!utilizadas.contains(String.valueOf(letras[i]))) {
+					if(letras[i]!=letra) {
+						salida[i]='_';
+					}
+				}	
 			}
 			
 			if(String.valueOf(salida).equalsIgnoreCase(solucion)) {
