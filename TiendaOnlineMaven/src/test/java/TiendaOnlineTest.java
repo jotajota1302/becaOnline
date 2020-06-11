@@ -4,6 +4,7 @@ import java.io.FileReader;
 import org.junit.jupiter.api.Test;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.repository.ProductoRepository;
@@ -16,12 +17,16 @@ class TiendaOnlineTest {
 	void leerJson() throws FileNotFoundException {
 
 		TiendaOnlineUtils util= new TiendaOnlineUtils();	
-		Gson gson = new Gson();	
+		Gson gson =new GsonBuilder().setPrettyPrinting().create();	
 
 		FileReader reader=new FileReader(util.getFileFromResources("productos.json"));
 			
 		Producto producto = gson.fromJson(reader, Producto.class);
 	
+		Producto producto2= new Producto("aaaaa", "bbbb",1,"ddd",2);
+		
+		String json = gson.toJson(producto2);
+		System.out.println(json);
 		System.out.println(producto);
 		
 	}
