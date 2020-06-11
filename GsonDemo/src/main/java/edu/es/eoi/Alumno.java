@@ -33,6 +33,10 @@ public class Alumno {
 	public void setNotas(List<Calificacion> notas) {
 		this.notas = notas;
 	}
+	@Override
+	public String toString() {
+		return "Alumno [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", notas=" + notas + "]";
+	}
 	
 	
 }

@@ -1,6 +1,7 @@
 package edu.es.eoi;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +33,11 @@ public class Main {
 		FileWriter writer= new FileWriter(new File("src/main/resources/alumnos.json"));
 		writer.write(alumnoJson);
 		writer.close();
+		
+		FileReader reader=new FileReader(new File("src/main/resources/alumnos.json"));
+		Alumno alumnoFromJson=gson.fromJson(reader, Alumno.class);
+		
+		System.out.println(alumnoFromJson);
 		
 	}
 
