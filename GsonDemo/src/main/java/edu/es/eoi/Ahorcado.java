@@ -53,6 +53,7 @@ public class Ahorcado {
 			System.out.println("Palabra: " + String.copyValueOf(salida));
 		}
 		System.out.println("La solucion era: " +solucion);
+		br.close();
 	}
 
 }
