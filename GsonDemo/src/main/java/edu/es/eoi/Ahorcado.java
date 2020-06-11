@@ -54,9 +54,11 @@ public class Ahorcado {
 			}
 			
 			if(String.valueOf(salida).equalsIgnoreCase(solucion)) {
-				System.out.println("has ganado");
+				System.out.println("has ganado!!!!!!!!!!! palabra:" + solucion);
+				break;
 			}else {
 				System.out.println("Te quedan " + numeroVidas +" intentos");
+				System.out.println("Ya has utilizado " + utilizadas);
 				numeroVidas--;
 			}		
 			
