@@ -1,9 +1,7 @@
 package edu.es.eoi.controller;
 
-import edu.es.eoi.App;
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.view.CestaView;
-import edu.es.eoi.view.ListadoProductosView;
 import edu.es.eoi.view.MenuPrincipalView;
 import edu.es.eoi.view.ProductoView;
 
