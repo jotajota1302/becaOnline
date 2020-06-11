@@ -47,20 +47,19 @@ public class Main {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
-            }
+            }            
+            br.close();
         }
+        
     }
 	
 	private static void writeFile(File file) throws IOException {
 
         if (file == null) return;
-
-        try (FileWriter writer = new FileWriter(file);
-             BufferedWriter bw = new BufferedWriter(writer)) {
-
-        	 bw.append("Hola pepito");        	
-        	 bw.close();
-        }
+        	FileWriter writer = new FileWriter(file);
+            writer.write("");
+        	writer.close();
+        
     }
 	
 	
