@@ -13,8 +13,7 @@ public class ProductoRepository {
 
 		Producto producto = null;
 		TiendaOnlineUtils util = new TiendaOnlineUtils();
-//		File fichero = util.getFileFromResources("productos.txt");
-		File fichero= new File("C:/git beca online/becaOnline/TiendaOnlineMaven/src/main/resources/productos.txt");
+		File fichero = util.getFileFromResources("productos.txt");
 		FileReader reader = new FileReader(fichero);
 		BufferedReader br = new BufferedReader(reader);
 
