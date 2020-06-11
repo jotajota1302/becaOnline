@@ -1,0 +1,4 @@
+reference,name,stock;
+01021545,Television,10;
+15658785,Ordenador,5;
+12345457,Zapatilla,8;

@@ -7,6 +7,8 @@ C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\Television.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\repository\PedidoRepository.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\ProductoElectronico.java
+C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\exception\TiendaOnlineException.java
+C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\view\ListaDeseosView.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\controller\MenuController.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\repository\ProductoRepository.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\ListaDeseos.java
@@ -16,6 +18,7 @@ C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\ClienteEmpresa.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\Persona.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\service\PedidoService.java
+C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\view\CestaView.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\view\ProductoView.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\App.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\ProductoDeportivo.java
