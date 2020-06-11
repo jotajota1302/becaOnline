@@ -50,6 +50,13 @@ public class Producto {
 		this.descripcion = descripcion;
 		this.stock = stock;
 	}
+	@Override
+	public String toString() {
+		return "Producto [nombre=" + nombre + ", referencia=" + referencia + ", precio=" + precio + ", descripcion="
+				+ descripcion + ", stock=" + stock + "]";
+	}
+	
+	
 	
 }
 

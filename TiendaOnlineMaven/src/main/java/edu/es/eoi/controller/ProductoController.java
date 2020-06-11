@@ -1,7 +1,5 @@
 package edu.es.eoi.controller;
 
-import java.util.Map;
-
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
@@ -11,16 +9,16 @@ public class ProductoController {
 
 	private ProductoService service;
 
-	public ProductoController(Map<String, Producto> almacen, Carrito carrito, ListaDeseos deseos) {
+	public ProductoController(Carrito carrito, ListaDeseos deseos) {
 		super();
-		this.service = new ProductoService(almacen, carrito, deseos);
+		this.service = new ProductoService(carrito, deseos);
 	}
 
 	public void comprar(Producto producto) {
 		service.comprar(producto);
 	}
 
-	public Producto buscar(String referencia) {
+	public Producto buscar(String referencia) throws Exception {
 		return service.buscar(referencia);
 	}
 

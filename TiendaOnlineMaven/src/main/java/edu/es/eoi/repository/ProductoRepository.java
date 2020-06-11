@@ -1,32 +1,33 @@
 package edu.es.eoi.repository;
 
-import java.util.Map;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 import edu.es.eoi.entity.Producto;
+import edu.es.eoi.util.TiendaOnlineUtils;
 
 public class ProductoRepository {
 
-	private Map<String,Producto> almacen;
+	public Producto leer(String referencia) throws Exception {
 
-	public ProductoRepository(Map<String,Producto> productos) {
-		super();
-		this.almacen = productos;
+		Producto producto = null;
+		TiendaOnlineUtils util = new TiendaOnlineUtils();
+//		File fichero = util.getFileFromResources("productos.txt");
+		File fichero= new File("C:/git beca online/becaOnline/TiendaOnlineMaven/src/main/resources/productos.txt");
+		FileReader reader = new FileReader(fichero);
+		BufferedReader br = new BufferedReader(reader);
+
+		String line;
+		while ((line = br.readLine()) != null) {
+			String[] prod = line.split(",");
+			if (prod[1].equals(referencia)) {
+				producto = new Producto(prod[0], prod[1], Double.valueOf(prod[2]), prod[3], Integer.valueOf(prod[4]));
+				br.close();
+				return producto;
+			}			
+		}
+		br.close();
+		return producto;
 	}
-
-	public void guardar(Producto producto) {	
-		almacen.put(producto.getReferencia(), producto);
-	}
-
-	public Producto leer(String referencia) {		
-		return almacen.get(referencia);
-	}
-
-	public void actualizar(Producto producto) {		
-		almacen.put(producto.getReferencia(), producto);		
-	}
-
-	public void borrar(String referencia) {		
-		almacen.remove(referencia);
-	}
-
 }

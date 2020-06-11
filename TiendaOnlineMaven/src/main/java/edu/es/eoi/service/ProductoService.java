@@ -1,7 +1,5 @@
 package edu.es.eoi.service;
 
-import java.util.Map;
-
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
@@ -13,11 +11,11 @@ public class ProductoService {
 	private ListaDeseos deseos;
 	private ProductoRepository repository;
 
-	public ProductoService(Map<String, Producto> almacen, Carrito carrito, ListaDeseos deseos) {
+	public ProductoService(Carrito carrito, ListaDeseos deseos) {
 		super();
 		this.carrito = carrito;
 		this.deseos = deseos;
-		this.repository = new ProductoRepository(almacen);
+		this.repository = new ProductoRepository();
 	}
 
 	public void comprar(Producto producto) {
@@ -33,7 +31,7 @@ public class ProductoService {
 		carrito.getProductos().add(producto);
 	}
 
-	public Producto buscar(String referencia) {
+	public Producto buscar(String referencia) throws Exception {
 		return repository.leer(referencia);
 	}
 

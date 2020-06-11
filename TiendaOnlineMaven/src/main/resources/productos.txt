@@ -1,0 +1,3 @@
+nombre,referencia,precio,descripcion,stock
+Televisión,01021545,300,Television pequeña,10
+Ordenador,12345678,500,MINI PC,5

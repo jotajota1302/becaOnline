@@ -13,8 +13,7 @@ public class MenuController {
 
 		switch (opcion) {
 		case 0:
-			System.out.println("Navegar a menu 0");
-			ListadoProductosView.imprimirProductos(App.almacen);
+			System.out.println("Navegar a menu 0");			
 			MenuPrincipalView.imprimirMenu();
 			break;
 		case 1:

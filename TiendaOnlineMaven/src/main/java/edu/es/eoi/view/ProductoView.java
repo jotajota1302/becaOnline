@@ -25,11 +25,16 @@ public class ProductoView {
 
 	public static Producto introduceReferencia() {
 
+		Producto producto = null;
 		System.out.println("Introduce la referencia del producto: ");
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-		return App.productoController.buscar(scanner.next());
-
+		try {
+			 producto=App.productoController.buscar(scanner.next());
+		} catch (Exception e) {		
+			e.printStackTrace();
+		}
+		return producto;
 	}
 
 }
