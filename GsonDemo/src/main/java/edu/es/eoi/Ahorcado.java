@@ -13,37 +13,28 @@ public class Ahorcado {
 
 	public static void main(String[] args) throws IOException {
 
-		int numeroVidas=10; 
-		
+		int numeroVidas=10; 		
 		List<String> palabras = new ArrayList<String>();
-
 		FileReader reader = new FileReader(new File("src/main/resources/palabras.txt"));
 		BufferedReader br = new BufferedReader(reader);
 		String palabra;
 		while ((palabra = br.readLine()) != null) {
 			palabras.add(palabra);
 		}
-
 		int numPalabra = ThreadLocalRandom.current().nextInt(0, palabras.size());
-		String solucion=palabras.get(numPalabra);
-		
-		System.out.println("La palabra tiene " + solucion.length() +" letras");
-			
+		String solucion=palabras.get(numPalabra);		
+		System.out.println("La palabra tiene " + solucion.length() +" letras");			
 		char[] letras = solucion.toCharArray();
 		String utilizadas="";		
 		
-		while (numeroVidas>0) {					
-		
+		while (numeroVidas>0) {	
 			System.out.println("Introduce letra: ");
 			Scanner scanner= new Scanner(System.in);
-			char letra=scanner.next().toCharArray()[0];
-			
+			char letra=scanner.next().toCharArray()[0];			
 			if(!utilizadas.contains(String.valueOf(letra))) {
 				utilizadas=utilizadas.concat(String.valueOf(letra));
-			}			
-			
-			char[] salida=solucion.toCharArray();
-			
+			}	
+			char[] salida=solucion.toCharArray();			
 			for (int i = 0; i < letras.length; i++) {
 				
 				if(!utilizadas.contains(String.valueOf(letras[i]))) {
@@ -51,21 +42,17 @@ public class Ahorcado {
 						salida[i]='_';
 					}
 				}	
-			}
-			
+			}			
 			if(String.valueOf(salida).equalsIgnoreCase(solucion)) {
 				System.out.println("has ganado!!!!!!!!!!! palabra:" + solucion);
 				break;
 			}else {
 				System.out.println("Te quedan " + numeroVidas +" intentos");
 				System.out.println("Ya has utilizado " + utilizadas);
-				numeroVidas--;
-			}		
-			
+				numeroVidas--;		
+				}
 			System.out.println("Palabra: " + String.copyValueOf(salida));
 		}
-		
-		
 		
 	}
 
