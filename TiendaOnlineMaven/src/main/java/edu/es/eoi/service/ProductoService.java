@@ -37,6 +37,11 @@ public class ProductoService {
 
 	public void addToListaDeseos(Producto producto) {
 		deseos.getProductos().add(producto);
-	}
+	}	
+
+	public ProductoRepository getRepository() {
+		return repository;
+	}	
+	
 
 }

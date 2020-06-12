@@ -1,54 +1,51 @@
 package edu.es.eoi.repository;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import edu.es.eoi.App;
 import edu.es.eoi.entity.Producto;
-import edu.es.eoi.util.TiendaOnlineUtils;
 
 public class ProductoRepository {
+	
+	private String pathFichero="src/main/resources/productos.json";
 
 	public Producto leer(String referencia) throws Exception {
+		Gson gson =new Gson();
+		FileReader reader=new FileReader(new File(pathFichero));	
+						
+	    Type type = new TypeToken<HashMap<String, Producto>>(){}.getType();
+	    Map<String,Producto> productos = gson.fromJson(reader, type);
 
-		Producto producto = null;
-		TiendaOnlineUtils util = new TiendaOnlineUtils();
-		File fichero = util.getFileFromResources("productos.txt");
-		FileReader reader = new FileReader(fichero);
-		BufferedReader br = new BufferedReader(reader);
+		return  productos.get(referencia);
+	}
 
-		String line;
-		while ((line = br.readLine()) != null) {
-			String[] prod = line.split(",");
-			if (prod[1].equals(referencia)) {
-				producto = new Producto(prod[0], prod[1], Double.valueOf(prod[2]), prod[3], Integer.valueOf(prod[4]));
-				br.close();
-				return producto;
-			}
-		}
-		br.close();
+	public Producto guardar(Producto producto) throws Exception {		
+		Gson gson =new GsonBuilder().setPrettyPrinting().create();			
+		FileWriter writer= new FileWriter(new File(pathFichero),false);
+		
+		App.productos.put(producto.getReferencia(),producto);		
+		writer.write(gson.toJson(App.productos));
+		writer.close();	
 		return producto;
 	}
 
-	public Producto guardar(Producto producto) throws Exception {
-
-		TiendaOnlineUtils util = new TiendaOnlineUtils();
-		File fichero = util.getFileFromResources("productos.txt");
-		FileWriter writer = new FileWriter(fichero, true);
-
-		writer.write(producto.getNombre().concat(",")
-				.concat(producto.getReferencia()
-				.concat(",")
-				.concat(String.valueOf(producto.getPrecio())
-				.concat(",")
-				.concat(producto.getDescripcion()
-				.concat(",")
-				.concat(String.valueOf(producto.getStock()))))));
-				
-		writer.close();
-
-		return producto;
+	public String getPathFichero() {
+		return pathFichero;
 	}
+
+	public void setPathFichero(String pathFichero) {
+		this.pathFichero = pathFichero;
+	}
+	
+	
 
 }

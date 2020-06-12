@@ -1,6 +1,8 @@
 package edu.es.eoi;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.es.eoi.controller.ProductoController;
 import edu.es.eoi.entity.Carrito;
@@ -13,6 +15,7 @@ public class App {
 	public static Carrito carrito;
 	public static ListaDeseos deseos;
 	public static ProductoController productoController;
+	public static Map<String,Producto> productos;
 
 	public static void main(String[] args) {
 	
@@ -36,6 +39,7 @@ public class App {
 		
 		carrito= new Carrito(new ArrayList<Producto>());
 		deseos= new ListaDeseos(new ArrayList<Producto>());
+		productos= new HashMap<String, Producto>();
 		
 //		Producto p1= new Batidora("Moulinex BC1", "4589865412", 40, "Maravillos batidora ultimo modelo", 20, "BC1", 220, 2500);
 //		Producto p2= new Batidora("Aliexpress CC", "4454545452", 20, "Batidora regulera pero barata", 20, "CC2", 220, 2500);

@@ -1,0 +1,7 @@
+{
+  "nombre": "ProductoTEST",
+  "referencia": "referencia",
+  "precio": 100.0,
+  "descripcion": "descripcion",
+  "stock": 5
+}

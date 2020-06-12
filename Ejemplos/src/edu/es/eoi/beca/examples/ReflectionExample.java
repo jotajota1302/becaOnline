@@ -16,18 +16,17 @@ public class ReflectionExample {
 		//Obtener el Class directamente de un objeto (Recordatorio: un objeto de tipo String v�lido es un texto entre comillas)
 		Class classDelTexto = "Un texto".getClass();
 
-	//	System.out.println(classDelTexto);
+		System.out.println(classDelTexto);
 		
 		Integer numero = 5;
 		Class classDelNumero = numero.getClass();
 
-//		System.out.println(classDelNumero);
-		
-		
+		System.out.println(classDelNumero);
+				
 		//Para tipos primitivos tenemos que usar �.class� 
 	
 		//Tambi�n podemos obtener una clase desde un nombre completamente cualificado (fully-quailified name); esto es, el nombre del paquete donde est� nuestra clase, seguido del nombre de la clase
-//		Class c = Class.forName("Example");
+//		Class c = Class.forName("edu.es.eoi.beca.examples.Example");
 
 //		System.out.println(c);
 		
@@ -79,7 +78,7 @@ public class ReflectionExample {
 		//obtener el valor de una variable
 		
 		//Si queremos obtener una variable
-		Field variableNumero = objetoDeClassConInfoDeMiClase.getField("numero");
+		Field variableNumero = objetoDeClassConInfoDeMiClase.getField("number");
 		double numeroObtenido = (double) variableNumero.get(objectoDeMiClase);
 		
 		//que pasa con el private???
@@ -88,7 +87,7 @@ public class ReflectionExample {
 		
 		//tenemos que trampear
 		
-		Field variableString = objetoDeClassConInfoDeMiClase.getDeclaredField("texto");		
+		Field variableString = objetoDeClassConInfoDeMiClase.getDeclaredField("text");		
 		variableString.setAccessible(true);
 		String textoObtenido = (String) variableString.get(objectoDeMiClase);
 	}
