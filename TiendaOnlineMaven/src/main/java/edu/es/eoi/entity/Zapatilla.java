@@ -1,16 +1,16 @@
 package edu.es.eoi.entity;
 
+import java.util.ArrayList;
+import java.util.Date;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Zapatilla extends ProductoDeportivo {
 
-	private String talla;
-
-	public String getTalla() {
-		return talla;
-	}
-
-	public void setTalla(String talla) {
-		this.talla = talla;
-	}
+	private String talla;	
 
 	public Zapatilla(String nombre, String referencia, double precio, String descripcion, int stock, String marca,
 			String talla) {
@@ -27,8 +27,5 @@ public class Zapatilla extends ProductoDeportivo {
 				+ ", toString()=" + super.toString() + "]";
 	}
 
-	
-	
-	
 	
 }

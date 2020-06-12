@@ -25,6 +25,7 @@ C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\App.jav
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\ProductoDeportivo.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\repository\PersonaRepository.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\service\RegistroService.java
+C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\util\ProductoFactory.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\Pedido.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\entity\Producto.java
 C:\git beca online\becaOnline\TiendaOnlineMaven\src\main\java\edu\es\eoi\service\ProductoService.java

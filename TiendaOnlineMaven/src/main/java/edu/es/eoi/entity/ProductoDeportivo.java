@@ -1,5 +1,10 @@
 package edu.es.eoi.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ProductoDeportivo extends Producto {
 
 	public ProductoDeportivo(String nombre, String referencia, double precio, String descripcion, int stock,
@@ -9,14 +14,5 @@ public class ProductoDeportivo extends Producto {
 	}
 
 	private String marca;
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-	
 	
 }

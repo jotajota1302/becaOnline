@@ -2,17 +2,14 @@ package edu.es.eoi.entity;
 
 import java.util.ArrayList;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ListaDeseos {
 	
-	private ArrayList<Producto> productos;
-
-	public ArrayList<Producto> getProductos() {
-		return productos;
-	}
-
-	public void setProductos(ArrayList<Producto> productos) {
-		this.productos = productos;
-	}
+	private ArrayList<Producto> productos;	
 
 	public ListaDeseos(ArrayList<Producto> productos) {
 		super();
