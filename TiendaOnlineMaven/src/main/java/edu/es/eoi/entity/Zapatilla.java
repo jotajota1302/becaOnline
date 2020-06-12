@@ -1,8 +1,5 @@
 package edu.es.eoi.entity;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 import lombok.Getter;
 import lombok.Setter;
 
