@@ -6,4 +6,12 @@
     "descripcion": "descripcion",
     "stock": 5
   }
+}{
+  "123456": {
+    "nombre": "ProductoTEST",
+    "referencia": "123456",
+    "precio": 100.0,
+    "descripcion": "descripcion",
+    "stock": 5
+  }
 }
