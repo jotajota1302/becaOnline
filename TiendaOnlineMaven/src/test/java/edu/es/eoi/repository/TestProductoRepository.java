@@ -1,12 +1,10 @@
 package edu.es.eoi.repository;
 
-import static org.junit.Assert.*;
-
-import java.util.HashMap;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import edu.es.eoi.App;
 import edu.es.eoi.entity.Producto;
 
 public class TestProductoRepository {
