@@ -19,9 +19,9 @@ public class ProductoRepository {
 	private String pathFichero="src/main/resources/productos.json";
 
 	public Producto leer(String referencia) throws Exception {
+		
 		Gson gson =new GsonBuilder().setPrettyPrinting().create();
-		FileReader reader=new FileReader(new File(pathFichero));	
-						
+		FileReader reader=new FileReader(new File(pathFichero));							
 	    Type type = new TypeToken<HashMap<String, Producto>>(){}.getType();
 	    Map<String,Producto> productos = gson.fromJson(reader, type);
 
@@ -38,7 +38,13 @@ public class ProductoRepository {
 		}		
 		if(!productos.containsKey(producto.getReferencia())) {
 			productos.put(producto.getReferencia(),producto);
-		}		
+		}else {			
+			Producto p=productos.get(producto.getReferencia());
+			p.setDescripcion(producto.getDescripcion());
+			p.setNombre(producto.getNombre());
+			p.setPrecio(producto.getPrecio());
+			p.setStock(producto.getStock());			
+		}
 		
 		FileWriter writer= new FileWriter(new File(pathFichero));	
 		writer.write(gson.toJson(productos));
@@ -47,6 +53,7 @@ public class ProductoRepository {
 	}
 	
 	public Map<String, Producto> cargarProductos() throws FileNotFoundException{
+	
 		Gson gson =new GsonBuilder().setPrettyPrinting().create(); 
 		FileReader reader=new FileReader(new File(pathFichero));
 		Type type = new TypeToken<HashMap<String, Producto>>(){}.getType();

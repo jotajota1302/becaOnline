@@ -24,7 +24,7 @@ public class TestProductoRepository {
 	public void testGuardar() throws Exception {	
 		ProductoRepository repository= new ProductoRepository();	
 		repository.guardar(new Producto("ProductoTEST","123456",100,"descripcion",5));
-		repository.guardar(new Producto("ProductoTEST2","654132",100,"descripcion",5));
+		repository.guardar(new Producto("ProductoTEST2","654132",50,"descripcion",5));
 	}
 	
 	@Test
