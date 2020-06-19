@@ -1,5 +1,6 @@
 package edu.es.eoi.beca.ejemplos;
 import java.time.Month;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -32,8 +33,8 @@ public class StringUtilsMain {
 		
 		String texto="Lorem fistrum benemeritaar te voy a borrar el cerito por la gloria de mi madre no te digo trigo por no llamarte Rodrigor condemor de la pradera benemeritaar quietooor mamaar. Caballo blanco caballo negroorl apetecan ahorarr benemeritaar. Jarl ahorarr de la pradera la caidita tiene musho peligro. A gramenawer fistro quietooor diodeno no puedor ese que llega. De la pradera la caidita a peich te va a hasé pupitaa. Fistro papaar papaar benemeritaar ese pedazo de torpedo pecador ese pedazo de. Va usté muy cargadoo ese que llega a peich sexuarl me cago en tus muelas jarl te voy a borrar el cerito jarl.";
 		//Ejercicio 5	
-		
-		Map<String, Integer> letras = getOcurrenciasLetra(texto,List.of("a","e","i","o","u"));
+	
+		Map<String, Integer> letras = getOcurrenciasLetra(texto,Arrays.asList("a","e","i","o","u"));
 			
 		for (String letra : letras.keySet()) {
 			System.out.println("Tengo " + letras.get(letra)+ " " + letra);
