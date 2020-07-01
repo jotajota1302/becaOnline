@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.es.eoi.controller.AlumnoController;
 import com.es.eoi.entities.Alumno;
+import com.es.eoi.entities.Domain;
 import com.es.eoi.repositories.AlumnoRepository;
 import com.es.eoi.services.AlumnoService;
 
@@ -33,7 +34,10 @@ public class Main {
 		
 		Alumno al=context.getBean(Alumno.class);
 		
+		 Domain domain = context.getBean(Domain.class);
+		
 		System.out.println(al.dog.name);
+		System.out.println(domain.getField());
 	}
 
 }
