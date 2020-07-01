@@ -10,14 +10,14 @@ import org.junit.Test;
 
 import edu.es.eoi.entity.Producto;
 
-public class TestProductoRepositoryJDBCImpl {
+public class TestProductoRepositoryJPAImpl {
 
-	MyRepository<Producto> repository= new ProductoRepositoryJDBCImpl();
+	MyRepository<Producto> repository= new ProductoRepositoryJPAImpl();
 	
 	@Test
 	public void testLeer() throws Exception {		
-		Producto producto=repository.read("111111111");		
-		assertEquals(producto.getReferencia(), "111111111");				
+		Producto producto=repository.read("3333333");		
+		assertEquals(producto.getReferencia(), "3333333");				
 	}
 
 	@Test
@@ -28,7 +28,7 @@ public class TestProductoRepositoryJDBCImpl {
 	}
 	
 	@Test
-	public void testBorrar() throws Exception {	
+	public void testBorrar() throws Exception {			
 		repository.delete("222222222");	
 		assertNull(repository.read("222222222"));
 	}

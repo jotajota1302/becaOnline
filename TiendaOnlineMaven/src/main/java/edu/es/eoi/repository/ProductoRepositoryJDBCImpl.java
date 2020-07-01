@@ -34,8 +34,11 @@ public class ProductoRepositoryJDBCImpl implements MyRepository<Producto> {
 		ResultSet rs = statement.executeQuery();
 
 		while (rs.next()) {
-			producto = new Producto(rs.getString("nombre"), rs.getString("referencia"), rs.getDouble("precio"),
-					rs.getString("descripcion"), rs.getInt("stock"));
+			producto = new Producto(rs.getString("referencia"),
+				                    rs.getString("nombre"),
+				                    rs.getDouble("precio"),
+				                    rs.getString("descripcion"),
+				                    rs.getInt("stock"));
 		}
 
 		closeConnection(con);
@@ -70,11 +73,14 @@ public class ProductoRepositoryJDBCImpl implements MyRepository<Producto> {
 		ResultSet rs = statement.executeQuery();
 
 		while (rs.next()) {
-			Producto producto = new Producto(rs.getString("nombre"), rs.getString("referencia"), rs.getDouble("precio"),
-					rs.getString("descripcion"), rs.getInt("stock"));
+			Producto producto = new Producto(rs.getString("referencia"),
+					                         rs.getString("nombre"),
+					                         rs.getDouble("precio"),
+					                         rs.getString("descripcion"),
+					                         rs.getInt("stock"));
 			productos.put(producto.getReferencia(), producto);
 		}
-
+		
 		closeConnection(con);
 		
 		return productos;

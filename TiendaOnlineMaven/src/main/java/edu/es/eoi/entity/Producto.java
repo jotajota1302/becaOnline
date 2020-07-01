@@ -1,29 +1,39 @@
 package edu.es.eoi.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
+@Table(name = "productos")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Producto {
-
-	private String nombre;
+	
+	@Id
+	@Column
 	private String referencia;
+	@Column
+	private String nombre;
+	@Column
 	private double precio;
+	@Column
 	private String descripcion;
+	@Column
 	private int stock;
 		
 	public String getDetalle() {		
 		return this.nombre.concat(", "+this.descripcion);
 	}
-	public Producto(String nombre, String referencia, double precio, String descripcion, int stock) {
-		super();
-		this.nombre = nombre;
-		this.referencia = referencia;
-		this.precio = precio;
-		this.descripcion = descripcion;
-		this.stock = stock;
-	}
+	
 	@Override
 	public String toString() {
 		return "Producto [nombre=" + nombre + ", referencia=" + referencia + ", precio=" + precio + ", descripcion="
