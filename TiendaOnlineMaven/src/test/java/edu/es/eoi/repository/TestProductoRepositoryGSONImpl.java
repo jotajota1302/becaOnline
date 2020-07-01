@@ -8,7 +8,7 @@ import org.junit.Test;
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.entity.Zapatilla;
 
-public class TestProductoRepository {
+public class TestProductoRepositoryGSONImpl {
 
 	@Test
 	public void testLeer() throws Exception {
