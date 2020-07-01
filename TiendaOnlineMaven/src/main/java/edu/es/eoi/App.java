@@ -29,10 +29,11 @@ public class App {
 		start();		
 	}
 	
+	@SuppressWarnings("unused")
 	public static void inicializarApp() {		
 		
 		carrito= new Carrito(new ArrayList<Producto>());
-		deseos= new ListaDeseos(new ArrayList<Producto>());	
+		deseos= new ListaDeseos(new ArrayList<Producto>());			
 		MyRepository<Producto> jdbcRepository=new ProductoRepositoryJDBCImpl();
 		MyRepository<Producto> jpaRepository=new ProductoRepositoryJPAImpl();
 		MyRepository<Producto> gsonRepository=new ProductoRepositoryGSONImpl();

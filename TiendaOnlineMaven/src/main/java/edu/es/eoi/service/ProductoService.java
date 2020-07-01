@@ -6,7 +6,6 @@ import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.repository.MyRepository;
-import edu.es.eoi.repository.ProductoRepositoryGSONImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
