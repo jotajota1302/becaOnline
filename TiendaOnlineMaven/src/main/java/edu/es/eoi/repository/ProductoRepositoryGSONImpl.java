@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,12 +14,17 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import edu.es.eoi.entity.Producto;
+import lombok.Getter;
+import lombok.Setter;
 
-public class ProductoRepository {
+@Getter
+@Setter
+public class ProductoRepositoryGSONImpl implements MyRepository<Producto> {
 	
 	private String pathFichero="src/main/resources/productos.json";
 
-	public Producto leer(String referencia) throws Exception {
+	@Override
+	public Producto read(String referencia) throws Exception {
 		
 		Gson gson =new GsonBuilder().setPrettyPrinting().create();
 		FileReader reader=new FileReader(new File(pathFichero));							
@@ -28,10 +34,11 @@ public class ProductoRepository {
 		return  productos.get(referencia);
 	}
 
-	public Producto guardar(Producto producto) throws Exception {	
+	@Override
+	public void save(Producto producto) throws Exception {	
 		
 		Gson gson =new GsonBuilder().setPrettyPrinting().create(); 
-		Map<String,Producto> productos=cargarProductos();
+		Map<String,Producto> productos=readAll();
 		
 		if(productos==null) {
 			productos= new HashMap<String,Producto>();
@@ -49,10 +56,11 @@ public class ProductoRepository {
 		FileWriter writer= new FileWriter(new File(pathFichero));	
 		writer.write(gson.toJson(productos));
 		writer.close();	
-		return producto;
+		
 	}
 	
-	public Map<String, Producto> cargarProductos() throws FileNotFoundException{
+	@Override
+	public Map<String, Producto> readAll() throws FileNotFoundException{
 	
 		Gson gson =new GsonBuilder().setPrettyPrinting().create(); 
 		FileReader reader=new FileReader(new File(pathFichero));
@@ -61,15 +69,19 @@ public class ProductoRepository {
 		
 		return productos;
 	}
-
-	public String getPathFichero() {
-		return pathFichero;
+		
+	@Override
+	public void delete(String referencia) throws IOException {
+		
+		Map<String, Producto> productos = readAll();
+		productos.remove(referencia);
+		
+		Gson gson =new GsonBuilder().setPrettyPrinting().create();
+		FileWriter writer= new FileWriter(new File(pathFichero));	
+		writer.write(gson.toJson(productos));
+		writer.close();	
+		
 	}
-
-	public void setPathFichero(String pathFichero) {
-		this.pathFichero = pathFichero;
-	}
-	
 	
 
 }

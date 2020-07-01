@@ -1,18 +1,19 @@
 package edu.es.eoi.controller;
 
-import edu.es.eoi.entity.Carrito;
-import edu.es.eoi.entity.ListaDeseos;
+import java.util.Map;
+
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.service.ProductoService;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProductoController {
 
 	private ProductoService service;
-
-	public ProductoController(Carrito carrito, ListaDeseos deseos) {
-		super();
-		this.service = new ProductoService(carrito, deseos);
-	}
 
 	public void comprar(Producto producto) {
 		service.comprar(producto);
@@ -20,6 +21,10 @@ public class ProductoController {
 
 	public Producto buscar(String referencia) throws Exception {
 		return service.buscar(referencia);
+	}
+	
+	public Map<String, Producto> readAll() throws Exception {
+		return service.readAll();
 	}
 
 }

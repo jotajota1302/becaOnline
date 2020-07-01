@@ -1,24 +1,33 @@
 package edu.es.eoi.repository;
 
+import java.util.Map;
+
 import edu.es.eoi.entity.Persona;
 
-public class PersonaRepository {
+public class PersonaRepository implements MyRepository<Persona>{
 
-	
-	public void create(Persona persona) {
-		
-	}
-
-	public Persona read(String referencia) {
+	@Override
+	public Persona read(String ref) throws Exception {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void update(Persona persona) {
-
+	@Override
+	public void save(Persona e) throws Exception {
+		
 	}
 
-	public void delete(String referencia) {
-
+	@Override
+	public Map<String, Persona> readAll() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	@Override
+	public void delete(String ref) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

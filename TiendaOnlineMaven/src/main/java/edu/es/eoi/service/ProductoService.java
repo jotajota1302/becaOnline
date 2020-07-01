@@ -1,47 +1,44 @@
 package edu.es.eoi.service;
 
+import java.util.Map;
+
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
 import edu.es.eoi.entity.Producto;
-import edu.es.eoi.repository.ProductoRepository;
+import edu.es.eoi.repository.MyRepository;
+import edu.es.eoi.repository.ProductoRepositoryGSONImpl;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class ProductoService {
 
 	private Carrito carrito;
 	private ListaDeseos deseos;
-	private ProductoRepository repository;
-
-	public ProductoService(Carrito carrito, ListaDeseos deseos) {
-		super();
-		this.carrito = carrito;
-		this.deseos = deseos;
-		this.repository = new ProductoRepository();
-	}
+	private MyRepository<Producto> repository;	
 
 	public void comprar(Producto producto) {
-		if (producto.getStock() > 0) {
-			addToCesta(producto);
-			producto.setStock(producto.getStock()-1);
-		} else {
-			addToListaDeseos(producto);
-		}
+	 //TODO realizar compra
 	}
 
 	public void addToCesta(Producto producto) {
 		carrito.getProductos().add(producto);
-	}
-
-	public Producto buscar(String referencia) throws Exception {
-		return repository.leer(referencia);
-	}
+	}	
 
 	public void addToListaDeseos(Producto producto) {
 		deseos.getProductos().add(producto);
 	}	
 
-	public ProductoRepository getRepository() {
-		return repository;
-	}	
+	public Producto buscar(String referencia) throws Exception {
+		return repository.read(referencia);
+	}
+	
+	public Map<String,Producto> readAll() throws Exception {
+		return repository.readAll();
+	}
 	
 
 }
