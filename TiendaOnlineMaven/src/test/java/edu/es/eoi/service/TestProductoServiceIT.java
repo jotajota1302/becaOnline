@@ -1,14 +1,6 @@
 package edu.es.eoi.service;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-
 import org.junit.Test;
-
-import edu.es.eoi.entity.Carrito;
-import edu.es.eoi.entity.ListaDeseos;
-import edu.es.eoi.entity.Producto;
 
 public class TestProductoServiceIT {
 
