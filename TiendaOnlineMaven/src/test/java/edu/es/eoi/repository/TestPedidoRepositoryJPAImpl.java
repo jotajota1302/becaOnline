@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import org.junit.After;
@@ -53,8 +54,10 @@ public class TestPedidoRepositoryJPAImpl {
 		persona.setNif("112345678T");
 		persona.setUsername("test@gmail");
 		persona.setPassword("password");
+		persona.setPedidos(new ArrayList<Pedido>());		
 		p.setPersona(persona);
-		persona.setPedido(p);		
+		persona.getPedidos().add(p);
+		
 		repository.save(p);
 	}	
 	

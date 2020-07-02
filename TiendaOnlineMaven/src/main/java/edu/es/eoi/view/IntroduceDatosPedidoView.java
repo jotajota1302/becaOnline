@@ -1,6 +1,7 @@
 package edu.es.eoi.view;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
 
@@ -26,13 +27,15 @@ public class IntroduceDatosPedidoView {
 		pedido.setFecha(Calendar.getInstance().getTime());
 		pedido.setReferencia(pedido_id);
 
+				
 		Persona persona = new Persona();
+		persona.setPedidos(new ArrayList<Pedido>());
 		persona.setNif(persona_id);
 		persona.setPassword("password");
 		persona.setUsername("username");
 
 		pedido.setPersona(persona);
-		persona.setPedido(pedido);
+		persona.getPedidos().add(pedido);
 
 		App.pedidoController.alta(pedido);
 

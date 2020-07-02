@@ -1,9 +1,11 @@
 package edu.es.eoi.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -23,6 +25,6 @@ public class Persona {
 	private String username;
 	@Column
 	private String password;
-	@OneToOne(mappedBy = "persona")
-	private Pedido pedido;
+	@OneToMany(mappedBy = "persona")
+	private List<Pedido> pedidos;
 }
