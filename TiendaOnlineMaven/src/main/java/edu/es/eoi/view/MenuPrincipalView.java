@@ -10,6 +10,7 @@ public class MenuPrincipalView {
 
 		System.out.println("Bienvenido a mi tienda, seleccion opcion: ");
 		System.out.println("0-Listar productos: ");
+		System.out.println("1-Realizar Pedido: ");
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);

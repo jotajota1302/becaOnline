@@ -1,7 +1,7 @@
-package edu.es.eoi.service;
+package edu.es.eoi.controller;
 
 import edu.es.eoi.entity.Pedido;
-import edu.es.eoi.repository.MyRepository;
+import edu.es.eoi.service.PedidoService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,14 +9,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class PedidoService {
-	
-	MyRepository<Pedido> repository;
-	
+public class PedidoController {
+
+	private PedidoService service;
+
 	public void alta(Pedido pedido) throws Exception {
-		repository.save(pedido);
+		service.alta(pedido);
 	}
 
-	
-	
+
 }

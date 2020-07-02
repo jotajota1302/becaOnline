@@ -2,14 +2,18 @@ package edu.es.eoi;
 
 import java.util.ArrayList;
 
+import edu.es.eoi.controller.PedidoController;
 import edu.es.eoi.controller.ProductoController;
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.ListaDeseos;
+import edu.es.eoi.entity.Pedido;
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.repository.MyRepository;
+import edu.es.eoi.repository.PedidoRepositoryJPAImpl;
 import edu.es.eoi.repository.ProductoRepositoryGSONImpl;
 import edu.es.eoi.repository.ProductoRepositoryJDBCImpl;
 import edu.es.eoi.repository.ProductoRepositoryJPAImpl;
+import edu.es.eoi.service.PedidoService;
 import edu.es.eoi.service.ProductoService;
 import edu.es.eoi.view.MenuPrincipalView;
 
@@ -18,6 +22,7 @@ public class App {
 	public static Carrito carrito;
 	public static ListaDeseos deseos;
 	public static ProductoController productoController;
+	public static PedidoController	pedidoController;
 
 	public static void main(String[] args) throws Exception {		
 			inicializarApp();			
@@ -37,8 +42,11 @@ public class App {
 		MyRepository<Producto> jdbcRepository=new ProductoRepositoryJDBCImpl();
 		MyRepository<Producto> jpaRepository=new ProductoRepositoryJPAImpl();
 		MyRepository<Producto> gsonRepository=new ProductoRepositoryGSONImpl();
-		ProductoService service= new ProductoService(carrito, deseos, jpaRepository);
-		productoController= new ProductoController(service);
+		ProductoService productoService= new ProductoService(carrito, deseos, jpaRepository);
+		productoController= new ProductoController(productoService);
+		MyRepository<Pedido> jpaRepoPedidos= new PedidoRepositoryJPAImpl();
+		PedidoService pedidoService= new PedidoService(jpaRepoPedidos);
+		pedidoController= new PedidoController(pedidoService);
 	
 	}
 	
