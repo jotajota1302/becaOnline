@@ -1,5 +1,6 @@
 package edu.es.eoi.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -9,16 +10,6 @@ import lombok.Setter;
 @Setter
 public class Carrito {
 	
-	private List<Producto> productos;
-	
-	public Carrito(List<Producto> productos) {
-		super();
-		this.productos = productos;
-	}
+	private List<Producto> productos= new ArrayList<Producto>();	
 
-
-	public void realizarComprar() {
-		//llamare para procesar la compra
-	}
-	
 }

@@ -1,6 +1,8 @@
 package edu.es.eoi.controller;
 
+import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.Pedido;
+import edu.es.eoi.entity.Persona;
 import edu.es.eoi.service.PedidoService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,11 +12,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class PedidoController {
-
+	
+	private Carrito carrito;
 	private PedidoService service;
 
-	public void alta(Pedido pedido) throws Exception {
-		service.alta(pedido);
+	public Pedido comprar(Persona persona, Carrito carrito) throws Exception {
+		return service.compra(persona, carrito);
 	}
 
 

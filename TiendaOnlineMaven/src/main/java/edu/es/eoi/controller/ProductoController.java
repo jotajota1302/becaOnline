@@ -13,12 +13,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ProductoController {
 
-	private ProductoService service;
+	private ProductoService service;	
 
-	public void comprar(Producto producto) {
-		service.comprar(producto);
+	public void addToCesta(Producto producto) {
+		service.addToCesta(producto);
 	}
-
+	
 	public Producto buscar(String referencia) throws Exception {
 		return service.buscar(referencia);
 	}
