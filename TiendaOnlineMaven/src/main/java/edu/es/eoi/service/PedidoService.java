@@ -20,8 +20,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class PedidoService {
-	
-	private Object object;
+		
 	MyRepository<Pedido> repository;
 	
 	public Pedido compra(Persona persona, Carrito carrito) throws Exception {
