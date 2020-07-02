@@ -1,10 +1,15 @@
 package edu.es.eoi.service;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.Pedido;
 import edu.es.eoi.entity.Persona;
+import edu.es.eoi.entity.Producto;
 import edu.es.eoi.repository.MyRepository;
 import edu.es.eoi.util.Utils;
 import lombok.AllArgsConstructor;
@@ -16,6 +21,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PedidoService {
 	
+	private Object object;
 	MyRepository<Pedido> repository;
 	
 	public Pedido compra(Persona persona, Carrito carrito) throws Exception {
@@ -34,5 +40,17 @@ public class PedidoService {
 	public Pedido getInformacionPedido(String referencia) throws Exception {		
 		return repository.read(referencia);		
 	}	
+	
+	public List<Pedido> getPedidosByPersona(String referencia) throws Exception{
+		
+		return repository.readAll().values().stream().
+				filter(p->p.getReferencia().equals(referencia)).
+				collect(Collectors.toList());
+	}
+	
+	public Producto getProductoMasVendido() throws Exception {
+		//???????
+		return null;
+	}
 	
 }

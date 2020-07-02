@@ -28,6 +28,5 @@ public class ProductoService {
 	public Map<String,Producto> readAll() throws Exception {
 		return repository.readAll();
 	}
-	
-
+		
 }
