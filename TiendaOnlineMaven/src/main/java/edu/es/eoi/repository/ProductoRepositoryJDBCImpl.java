@@ -38,7 +38,8 @@ public class ProductoRepositoryJDBCImpl implements MyRepository<Producto> {
 				                    rs.getString("nombre"),
 				                    rs.getDouble("precio"),
 				                    rs.getString("descripcion"),
-				                    rs.getInt("stock"));
+				                    rs.getInt("stock"),
+				                    null);
 		}
 
 		closeConnection(con);
@@ -77,7 +78,8 @@ public class ProductoRepositoryJDBCImpl implements MyRepository<Producto> {
 					                         rs.getString("nombre"),
 					                         rs.getDouble("precio"),
 					                         rs.getString("descripcion"),
-					                         rs.getInt("stock"));
+					                         rs.getInt("stock"),
+					                         null);
 			productos.put(producto.getReferencia(), producto);
 		}
 		

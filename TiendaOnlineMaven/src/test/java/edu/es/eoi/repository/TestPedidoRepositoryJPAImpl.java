@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import edu.es.eoi.entity.Pedido;
 import edu.es.eoi.entity.Persona;
+import edu.es.eoi.entity.Producto;
 
 public class TestPedidoRepositoryJPAImpl {
 
@@ -57,6 +58,15 @@ public class TestPedidoRepositoryJPAImpl {
 		persona.setPedidos(new ArrayList<Pedido>());		
 		p.setPersona(persona);
 		persona.getPedidos().add(p);
+		p.setProductos(new ArrayList<Producto>());
+		
+		Producto producto= new Producto();
+		producto.setReferencia("3333333");		
+		p.getProductos().add(producto);
+		
+		producto= new Producto();
+		producto.setReferencia("5555555");		
+		p.getProductos().add(producto);		
 		
 		repository.save(p);
 	}	

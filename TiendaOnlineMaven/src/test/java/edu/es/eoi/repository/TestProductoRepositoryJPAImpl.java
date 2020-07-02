@@ -22,7 +22,7 @@ public class TestProductoRepositoryJPAImpl {
 
 	@Test
 	public void testGuardar() throws Exception {		
-		Producto p= new Producto("222222222", "HP Pavilion", 300,"PC regulero" , 2);
+		Producto p= new Producto("222222222", "HP Pavilion", 300,"PC regulero" , 2,null);
 		repository.save(p);
 		assertEquals(300,repository.read("222222222").getPrecio(),0);	
 	}
@@ -40,7 +40,7 @@ public class TestProductoRepositoryJPAImpl {
 	
 	@Before
 	public void initBBDD() throws Exception {	
-		Producto p= new Producto("111111111", "Samsung TV", 500,"Maravillosa TV de 45'" , 45);
+		Producto p= new Producto("111111111", "Samsung TV", 500,"Maravillosa TV de 45'" , 45,null);
 		repository.save(p);
 	}	
 	

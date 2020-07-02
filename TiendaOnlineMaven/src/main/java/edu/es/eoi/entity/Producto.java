@@ -1,8 +1,11 @@
 package edu.es.eoi.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -29,6 +32,8 @@ public class Producto {
 	private String descripcion;
 	@Column
 	private int stock;
+	@ManyToMany(mappedBy = "productos")
+	private List<Pedido> pedidos;
 		
 	public String getDetalle() {		
 		return this.nombre.concat(", "+this.descripcion);
