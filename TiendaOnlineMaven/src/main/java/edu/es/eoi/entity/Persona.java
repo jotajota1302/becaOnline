@@ -23,6 +23,6 @@ public class Persona {
 	private String username;
 	@Column
 	private String password;
-	@OneToOne(mappedBy = "persona")
-	private Pedido pedido;
+//	@OneToOne(mappedBy = "persona")
+//	private Pedido pedido;
 }

@@ -29,7 +29,7 @@ public class PersonaRepositoryJPAImpl implements MyRepository<Persona> {
 	public Map<String, Persona> readAll() throws Exception {	
 		return manager.createQuery("from Persona",Persona.class).
 				getResultStream().
-				collect(Collectors.toMap(Persona::getUsername, p->p));
+				collect(Collectors.toMap(Persona::getNif, p->p));
 	}
 
 	@Override
