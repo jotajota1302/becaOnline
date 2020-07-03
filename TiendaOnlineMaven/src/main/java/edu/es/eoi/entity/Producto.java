@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -19,6 +20,7 @@ import lombok.Setter;
 @Table(name = "productos")
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Producto {
 	
 	@Id
@@ -34,18 +36,6 @@ public class Producto {
 	private int stock;
 	@ManyToMany(mappedBy = "productos")
 	private List<Pedido> pedidos;
-		
-	public String getDetalle() {		
-		return this.nombre.concat(", "+this.descripcion);
-	}
-	
-	@Override
-	public String toString() {
-		return "Producto [nombre=" + nombre + ", referencia=" + referencia + ", precio=" + precio + ", descripcion="
-				+ descripcion + ", stock=" + stock + "]";
-	}
-	
-	
 	
 }
 

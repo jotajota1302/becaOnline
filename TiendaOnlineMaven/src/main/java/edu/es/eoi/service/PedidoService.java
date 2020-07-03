@@ -2,8 +2,6 @@ package edu.es.eoi.service;
 
 import java.util.Calendar;
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import edu.es.eoi.entity.Carrito;
@@ -47,8 +45,7 @@ public class PedidoService {
 				collect(Collectors.toList());
 	}
 	
-	public Producto getProductoMasVendido() throws Exception {
-		//???????
+	public Producto getProductoMasVendido() throws Exception {	
 		return null;
 	}
 	
