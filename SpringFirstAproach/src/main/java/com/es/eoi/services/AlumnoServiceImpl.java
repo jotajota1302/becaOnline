@@ -14,7 +14,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 	@Override
 	public String findName(int id) {
 		
-		//logica de la muerta
+		//logica de la muerte
 		return this.repository.findName(id);
 	}
 

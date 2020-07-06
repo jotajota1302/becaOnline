@@ -3,18 +3,24 @@ package edu.es.eoi.view;
 import java.util.Map;
 import java.util.Scanner;
 
-import edu.es.eoi.App;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import edu.es.eoi.controller.ProductoController;
 import edu.es.eoi.entity.Producto;
 
+@Component
 public class ListadoProductosView {
 	
+	@Autowired
+	ProductoController controller;
 	
 	@SuppressWarnings("resource")
-	public static void imprimirProductos() throws Exception {
+	public void imprimirProductos() throws Exception {
 		
 		System.out.println("Estos son todos mis productos: ");
 		
-		Map<String,Producto> productos= App.productoController.readAll();
+		Map<String,Producto> productos= controller.readAll();
 		
 		for (Producto producto : productos.values()) {
 			System.out.println(producto);
@@ -24,10 +30,10 @@ public class ListadoProductosView {
 		Scanner scanner= new Scanner(System.in);
 		String opcion=scanner.next();
 		
-		Producto producto=App.productoController.buscar(opcion);
+		Producto producto=controller.buscar(opcion);
 		
 		if(producto!=null) {
-			App.productoController.addToCesta(producto);
+			controller.addToCesta(producto);
 		}	
 	}
 

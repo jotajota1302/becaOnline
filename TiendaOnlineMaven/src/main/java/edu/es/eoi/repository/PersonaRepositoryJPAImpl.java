@@ -6,8 +6,11 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import org.springframework.stereotype.Repository;
+
 import edu.es.eoi.entity.Persona;
 
+@Repository
 public class PersonaRepositoryJPAImpl implements MyRepository<Persona> {
 
 	static EntityManager manager= Persistence.createEntityManagerFactory("TIENDA_PERSISTENCE_UNIT").createEntityManager();	

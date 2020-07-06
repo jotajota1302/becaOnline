@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.es.eoi.entities.Dog;
 import com.es.eoi.entities.Domain;
 
 @Configuration
@@ -12,7 +13,8 @@ public class Config {
 	
 	@Bean
 	public Domain getDomain(){	
-		return new Domain("valor");
-	}
-
+		return new Domain("valor", new Dog());
+	}	
+	
+	
 }

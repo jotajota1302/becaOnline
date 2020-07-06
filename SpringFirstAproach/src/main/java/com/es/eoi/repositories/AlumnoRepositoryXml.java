@@ -1,5 +1,8 @@
 package com.es.eoi.repositories;
 
+import org.springframework.stereotype.Repository;
+
+
 public class AlumnoRepositoryXml implements AlumnoRepository{
 
 	@Override

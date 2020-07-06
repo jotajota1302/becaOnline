@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.Pedido;
 import edu.es.eoi.entity.Persona;
@@ -17,8 +20,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@Service
 public class PedidoService {
 		
+	@Autowired
 	MyRepository<Pedido> repository;
 	
 	public Pedido compra(Persona persona, Carrito carrito) throws Exception {

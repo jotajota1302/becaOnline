@@ -2,6 +2,9 @@ package edu.es.eoi.controller;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.service.ProductoService;
 import lombok.AllArgsConstructor;
@@ -11,8 +14,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@Controller
 public class ProductoController {
 
+	@Autowired
 	private ProductoService service;	
 
 	public void addToCesta(Producto producto) {

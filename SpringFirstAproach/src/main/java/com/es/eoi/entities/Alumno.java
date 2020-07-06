@@ -8,9 +8,5 @@ public class Alumno {
 	
 	@Autowired
 	public Dog dog;
-	
-	
-	
-	
 
 }

@@ -2,19 +2,23 @@ package edu.es.eoi.service;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import edu.es.eoi.entity.Carrito;
 import edu.es.eoi.entity.Producto;
 import edu.es.eoi.repository.MyRepository;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@Service
 public class ProductoService {
 
+	@Autowired
 	private Carrito carrito;	
+	@Autowired
 	private MyRepository<Producto> repository;	
 	
 	public void addToCesta(Producto producto) {

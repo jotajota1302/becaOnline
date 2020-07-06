@@ -2,11 +2,18 @@ package edu.es.eoi.view;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import edu.es.eoi.controller.MenuController;
 
+@Component
 public class MenuPrincipalView {
 
-	public static void imprimirMenu() throws Exception {
+	@Autowired
+	MenuController controller;
+	
+	public void imprimirMenu() throws Exception {
 
 		System.out.println("Bienvenido a mi tienda, seleccion opcion: ");
 		System.out.println("0-Listar productos: ");
@@ -16,7 +23,7 @@ public class MenuPrincipalView {
 		Scanner scanner = new Scanner(System.in);
 		int opcion = scanner.nextInt();
 
-		MenuController.gestionaOpcionMenu(opcion);
+		controller.gestionaOpcionMenu(opcion);
 
 	}
 
