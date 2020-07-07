@@ -9,20 +9,33 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 	
 	@Id
 	private String phone;
-
 	@Column
 	private String username;
 	
-	@OneToMany
-	List<Message> messages;
+	@OneToMany(mappedBy = "origin")
+	List<Message> sended;
+	
+	@OneToMany(mappedBy = "destiny")
+	List<Message> received;
+
+	public User(String phone, String username) {
+		super();
+		this.phone = phone;
+		this.username = username;
+	}
+	
+	
+	
 }
