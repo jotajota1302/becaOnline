@@ -34,7 +34,10 @@ public class Config {
 	
 	@Bean
 	public Persona getUser() {
-	 
+		Persona persona=new Persona();
+		persona.setNif("987654321A");
+		persona.setUsername("USER");
+		persona.setPassword("password");
 		
 		return persona;
 	}
