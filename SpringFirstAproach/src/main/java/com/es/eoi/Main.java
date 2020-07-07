@@ -1,5 +1,12 @@
 package com.es.eoi;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,13 +16,25 @@ import com.es.eoi.entities.Domain;
 
 public class Main {
 
-	public static void main(String[] args) {		
+	private static Logger logger = LoggerFactory.getLogger(Main.class);
+
+	public static void main(String[] args) throws IOException {		
+		
+		logger.info("Init app");
 		
 		//tengo que instanciar un contexto de spring
 		
 		@SuppressWarnings("resource")
 		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);		
-	
+
+		//load properties old way
+		Properties prop= new Properties();
+		
+		InputStream input = new FileInputStream("src/main/resources/application.properties");         
+		prop.load(input);
+
+		System.out.println(prop.get("exampleproperty"));
+		
 		Dog dog= context.getBean(Dog.class);
 		System.out.println(dog);
 		

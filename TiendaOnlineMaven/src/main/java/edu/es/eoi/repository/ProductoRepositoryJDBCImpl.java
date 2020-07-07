@@ -7,9 +7,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import edu.es.eoi.entity.Producto;
 
+@Repository
+@Qualifier("JDBC")
 public class ProductoRepositoryJDBCImpl implements MyRepository<Producto> {
 
 	@Autowired

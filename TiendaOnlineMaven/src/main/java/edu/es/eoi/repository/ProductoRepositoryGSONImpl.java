@@ -9,6 +9,9 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -19,6 +22,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Repository
+@Qualifier("GSON")
 public class ProductoRepositoryGSONImpl implements MyRepository<Producto> {
 	
 	private String pathFichero="src/main/resources/productos.json";

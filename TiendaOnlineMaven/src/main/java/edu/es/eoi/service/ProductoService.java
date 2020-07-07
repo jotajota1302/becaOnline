@@ -3,6 +3,7 @@ package edu.es.eoi.service;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import edu.es.eoi.entity.Carrito;
@@ -19,6 +20,7 @@ public class ProductoService {
 	@Autowired
 	private Carrito carrito;	
 	@Autowired
+	@Qualifier("JDBC")
 	private MyRepository<Producto> repository;	
 	
 	public void addToCesta(Producto producto) {
