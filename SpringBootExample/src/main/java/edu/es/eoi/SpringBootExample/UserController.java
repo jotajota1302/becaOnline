@@ -1,5 +1,8 @@
 package edu.es.eoi.SpringBootExample;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	
 	@GetMapping("users")	
-	public String getUsers() throws Exception {
-		return "return all users ";
+	public List<User> getUsers() throws Exception {
+		
+		List<User> users=new ArrayList<User>();
+		User user1= new User();
+		user1.setId(1);
+		user1.setName("JJ");
+		User user2= new User();
+		user2.setId(1);
+		user2.setName("PP");
+		users.add(user1);
+		users.add(user2);
+		
+		return users;
 	}
 	
 	@GetMapping("users/{id}/products")	
@@ -24,8 +38,11 @@ public class UserController {
 	}
 	
 	@GetMapping("users/{id}")	
-	public String getUser(@PathVariable String id) throws Exception {
-		return "return only with id: " + id;
+	public User getUser(@PathVariable Integer id) throws Exception {
+		User user= new User();
+		user.setId(id);
+		user.setName("JJ");
+		return user;
 	}
 	
 	@PostMapping("users")
