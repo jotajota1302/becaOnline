@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,10 +25,10 @@ public class User {
 	@Column
 	private String username;
 	
-	@OneToMany(mappedBy = "origin")
+	@OneToMany(mappedBy = "origin",fetch = FetchType.LAZY)
 	List<Message> sended;
 	
-	@OneToMany(mappedBy = "destiny")
+	@OneToMany(mappedBy = "destiny",fetch = FetchType.LAZY)
 	List<Message> received;
 
 	public User(String phone, String username) {

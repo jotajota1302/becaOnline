@@ -38,4 +38,7 @@ public class Message {
 	
 	@Column
 	private Date date;
+	
+	@Column
+	private Boolean readed;
 }

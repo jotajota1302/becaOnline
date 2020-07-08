@@ -32,21 +32,24 @@ public class App {
 	
 		
 		MessageController messageController=context.getBean(MessageController.class);
-		UserController userController=context.getBean(UserController.class);
-		
-		User user= userController. read("87654321");
+		UserController userController=context.getBean(UserController.class);		
+		User user= context.getBean(User.class);
 		
 		//no es necesario los mensajes ya viene en el user que tienes arriba
-		List<Message> messages=messageController.readMyMessages(user);
+		List<Message> all=messageController.readAllReceivedMessages(user);
 		
-		for (Message message : messages) {
-			System.out.println(message.getContent());
+		List<Message> received=messageController.readNonReadedMessages(user);
+		
+		System.out.println("Todos los mensajes");
+		for (Message message : all) {
+			System.out.println("from: " +message.getDestiny().getPhone()+" time: " +message.getDate()+": "+message.getContent());
 		}
-		
-		for (Message message : user.getReceived()) {
-			System.out.println(message.getContent());
+		System.out.println("***************************************");
+		System.out.println("Mensajes no leidos");		
+		for (Message message : received) {
+			System.out.println("from: " +message.getDestiny().getPhone()+" time: " +message.getDate()+": "+message.getContent());
 		}
-		
+		System.out.println("***************************************");
 	}
 
 }

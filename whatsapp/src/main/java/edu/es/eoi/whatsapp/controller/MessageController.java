@@ -22,8 +22,12 @@ public class MessageController {
 		service.save(e);
 	}	
 	
-	public List<Message> readMyMessages(User user){			
-		return service.readMessagesByDestiny(user.getPhone());
+	public List<Message> readNonReadedMessages(User user){			
+		return service.readNonReadedMessages(user.getPhone());
+	}
+	
+	public List<Message> readAllReceivedMessages(User user){			
+		return service.readAllReceivedMessages(user.getPhone());
 	}
 
 }
