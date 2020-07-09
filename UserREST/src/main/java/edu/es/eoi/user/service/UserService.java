@@ -19,5 +19,9 @@ public class UserService {
 	public void createUser(User user) {
 		repository.create(user);
 	}
+	
+	public void updateUser(User user) {
+		repository.update(user);
+	}
 
 }

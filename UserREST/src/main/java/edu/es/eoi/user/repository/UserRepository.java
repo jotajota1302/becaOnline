@@ -74,7 +74,24 @@ public class UserRepository implements MyRepository<User> {
 
 	@Override
 	public void update(User e) {
-		// TODO Auto-generated method stub
+		try {
+			Connection con=getConnection();
+
+			PreparedStatement st = con.prepareStatement("UPDATE rest.usuario SET "
+					+ "nombre=?,fecha=?,premium=?,saldo=? WHERE idUsuario=?");
+		
+			st.setString(1, e.getNombre());
+			st.setDate(2, new Date(e.getFecha().getTime()));
+			st.setBoolean(3, e.getPremium());
+			st.setDouble(4, e.getSaldo());		
+			st.setInt(5, e.getIdUsuario());
+
+			st.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
 
 	}
 

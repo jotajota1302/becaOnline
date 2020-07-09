@@ -33,5 +33,15 @@ class UserRestApplicationTests {
 		repo.create(user);		
 		
 	}
+	
+	@Test
+	void testUpdateUser() {
+		
+		UserRepository repo=new UserRepository();
+		User user=repo.findById(1);		
+		user.setFecha(Calendar.getInstance().getTime());			
+		repo.update(user);	
+				
+	}
 
 }
