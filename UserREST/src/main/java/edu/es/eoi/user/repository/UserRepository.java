@@ -7,8 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import edu.es.eoi.user.domain.User;
 
+@Repository
 public class UserRepository implements MyRepository<User> {
 
 	@Override
