@@ -1,6 +1,7 @@
 package edu.es.eoi.user.repository;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,17 +15,21 @@ import edu.es.eoi.user.domain.User;
 @Repository
 public class UserRepository implements MyRepository<User> {
 
+	public Connection getConnection() throws SQLException {
+		
+		String url = "jdbc:mysql://localhost:3306/rest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		String user = "root";
+		String pass = "root";
+		return DriverManager.getConnection(url, user, pass);
+	}
+
 	@Override
 	public User findById(Integer id) {
 
 		User entity = null;
 
 		try {
-			String url = "jdbc:mysql://localhost:3306/rest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-			String user = "root";
-			String pass = "root";
-			Connection con = DriverManager.getConnection(url, user, pass);
-
+			Connection con=getConnection();
 			PreparedStatement st = con.prepareStatement(
 					"SELECT idUsuario,nombre,fecha,premium,saldo FROM rest.usuario WHERE idUsuario=?");
 			st.setInt(1, id);
@@ -49,7 +54,21 @@ public class UserRepository implements MyRepository<User> {
 
 	@Override
 	public void create(User e) {
-		// TODO Auto-generated method stub
+	
+		try {
+			Connection con=getConnection();
+			PreparedStatement st = con.prepareStatement(
+					"INSERT INTO rest.usuario (nombre,fecha,premium,saldo) VALUES (?,?,?,?)");
+			st.setString(1, e.getNombre());
+			st.setDate(2, new Date(e.getFecha().getTime()));
+			st.setBoolean(3, e.getPremium());
+			st.setDouble(4, e.getSaldo());			
+
+			st.executeUpdate();		
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
 
 	}
 
