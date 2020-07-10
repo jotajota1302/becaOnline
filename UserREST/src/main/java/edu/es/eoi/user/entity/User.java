@@ -29,4 +29,5 @@ public class User {
 	private Boolean premium;
 	@Column
 	private Double saldo;
+
 }

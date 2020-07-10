@@ -13,7 +13,7 @@ import edu.es.eoi.user.repository.MyRepository;
 public class UserService {
 
 	@Autowired
-	@Qualifier("JDBC")
+	@Qualifier("JPA")
 	private MyRepository<User> repository;
 
 	public User findUserById(Integer idUsuario) {
