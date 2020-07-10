@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.es.eoi.user.domain.User;
+import edu.es.eoi.user.entity.User;
 import edu.es.eoi.user.service.UserService;
 
 @RestController

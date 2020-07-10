@@ -11,7 +11,7 @@ public class User {
 	
 	private Integer idUsuario;
 	private String nombre;
-	private Date fecha;
+	private Date fecha;	
 	private Boolean premium;
 	private Double saldo;
 }
