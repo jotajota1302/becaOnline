@@ -7,14 +7,14 @@ import java.util.Calendar;
 import org.junit.jupiter.api.Test;
 
 import edu.es.eoi.user.domain.User;
-import edu.es.eoi.user.repository.UserRepository;
+import edu.es.eoi.user.repository.UserRepositoryJDBCImpl;
 
-class UserRestApplicationTests {
+class UserRestApplicationJDBCImplTests {
 		
 	@Test
 	void testFindUserById() {
 		
-		UserRepository repo=new UserRepository();
+		UserRepositoryJDBCImpl repo=new UserRepositoryJDBCImpl();
 		User user=repo.findById(1);
 		assertThat(user.getNombre().contentEquals("JJ"));
 		
@@ -23,7 +23,7 @@ class UserRestApplicationTests {
 	@Test
 	void testCreateUser() {
 		
-		UserRepository repo=new UserRepository();
+		UserRepositoryJDBCImpl repo=new UserRepositoryJDBCImpl();
 		User user=new User();
 		user.setFecha(Calendar.getInstance().getTime());
 		user.setNombre("prueba");
@@ -37,7 +37,7 @@ class UserRestApplicationTests {
 	@Test
 	void testUpdateUser() {
 		
-		UserRepository repo=new UserRepository();
+		UserRepositoryJDBCImpl repo=new UserRepositoryJDBCImpl();
 		User user=repo.findById(1);		
 		user.setFecha(Calendar.getInstance().getTime());			
 		repo.update(user);	
