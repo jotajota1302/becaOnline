@@ -18,6 +18,7 @@ import edu.es.eoi.user.entity.User;
 public class UserRepositoryJPAImpl implements MyRepository<User>{
 
 	@Autowired
+	@Qualifier("REST")
 	private EntityManager manager;
 	
 	@Override

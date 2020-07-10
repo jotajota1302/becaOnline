@@ -6,12 +6,16 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import edu.es.eoi.user.entity.Cuenta;
 
+@Repository
 public class CuentaRepository implements MyRepository<Cuenta>{
 
 	@Autowired
+	@Qualifier("BANCO")
 	EntityManager manager;
 	
 	@Override

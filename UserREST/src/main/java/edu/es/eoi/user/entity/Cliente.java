@@ -8,13 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "CLIENTES")
+@Entity
+@Table(name = "CLIENTES", schema = "BANCO")
 public class Cliente {
 	@Id
 	@Column(name = "DNI", unique = true)
@@ -23,21 +27,10 @@ public class Cliente {
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
-	@Column(name = "APELLIDOS")
-	private String apellidos;
-	
-	@Column(name = "MAIL")
-	private String mail;
-	
 	@Column(name = "FECHA_ALTA")
-	private Date fechaAlta;
+	private Date fechaAlta;	
 	
-	@Column(name = "TELEFONO")
-	private String telefono;
-
-	@Column(name = "DIRECCION")
-	private String direccion;
-
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Cuenta> cuentas;	
 

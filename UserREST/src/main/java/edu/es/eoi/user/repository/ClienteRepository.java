@@ -6,37 +6,37 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import edu.es.eoi.user.entity.Cliente;
 
-public class ClienteRepository implements MyRepository<Cliente>{
+@Repository
+public class ClienteRepository {
 
 	@Autowired
+	@Qualifier("BANCO")
 	EntityManager manager;
 	
-	@Override
-	public Cliente findById(Integer id) {
-		return manager.find(Cliente.class, id);
+	
+	public Cliente findById(String dni) {
+		return manager.find(Cliente.class, dni);
 	}
 
-	@Override
+	
 	public void create(Cliente e) {
-		manager.merge(e);
-		
+		manager.persist(e);		
 	}
 
-	@Override
+	
 	public void update(Cliente e) {
-		manager.merge(e);
-		
+		manager.merge(e);		
 	}
 
-	@Override
-	public void deleteById(Integer id) {
-		manager.remove(findById(id));		
+	public void deleteById(String dni) {
+		manager.remove(findById(dni));		
 	}
-
-	@Override
+	
 	public List<Cliente> findAll() {
 		return manager.createQuery("from Cliente",Cliente.class).
 				getResultStream().
