@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 import org.junit.jupiter.api.Test;
 
-import edu.es.eoi.user.domain.User;
+import edu.es.eoi.user.entity.User;
 import edu.es.eoi.user.repository.UserRepositoryJDBCImpl;
 
 class UserRestApplicationJDBCImplTests {

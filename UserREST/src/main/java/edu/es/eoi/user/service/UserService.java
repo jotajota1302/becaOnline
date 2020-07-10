@@ -13,7 +13,7 @@ import edu.es.eoi.user.repository.MyRepository;
 public class UserService {
 
 	@Autowired
-	@Qualifier("JPA")
+	@Qualifier("JDBC")
 	private MyRepository<User> repository;
 
 	public User findUserById(Integer idUsuario) {
@@ -29,7 +29,7 @@ public class UserService {
 	}
 	
 	public void deleteById(Integer id) {
-		repository.deleteById(id);
+		repository.deleteById(id);		
 	}
 	
 	public List<User> findAll() {
