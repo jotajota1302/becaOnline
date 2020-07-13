@@ -3,6 +3,7 @@ package edu.es.eoi.user;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,4 +28,8 @@ public class UserRestApplication {
 		return Persistence.createEntityManagerFactory("BANCO_PERSISTENCE_UNIT").createEntityManager();	
 	}	
 	
+	@Bean
+	public ModelMapper modelMapper() {
+	    return new ModelMapper();
+	}
 }

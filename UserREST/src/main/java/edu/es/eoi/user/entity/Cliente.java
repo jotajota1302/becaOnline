@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,9 +26,8 @@ public class Cliente {
 	private String nombre;
 	
 	@Column(name = "FECHA_ALTA")
-	private Date fechaAlta;	
+	private Date fechaAlta;		
 	
-	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Cuenta> cuentas;	
 

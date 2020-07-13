@@ -17,30 +17,34 @@ public class ClienteRepository {
 	@Autowired
 	@Qualifier("BANCO")
 	EntityManager manager;
-	
-	
+
 	public Cliente findById(String dni) {
 		return manager.find(Cliente.class, dni);
 	}
 
-	
 	public void create(Cliente e) {
-		manager.persist(e);		
+		manager.getTransaction().begin();
+		manager.persist(e);
+		manager.getTransaction().commit();
 	}
 
-	
 	public void update(Cliente e) {
-		manager.merge(e);		
+		manager.getTransaction().begin();
+		manager.merge(e);
+		manager.getTransaction().commit();
 	}
 
 	public void deleteById(String dni) {
-		manager.remove(findById(dni));		
+		
+		Cliente cliente=findById(dni);
+		
+		manager.getTransaction().begin();
+		manager.remove(cliente);
+		manager.getTransaction().commit();
 	}
-	
+
 	public List<Cliente> findAll() {
-		return manager.createQuery("from Cliente",Cliente.class).
-				getResultStream().
-				collect(Collectors.toList());
+		return manager.createQuery("from Cliente", Cliente.class).getResultStream().collect(Collectors.toList());
 	}
 
 }

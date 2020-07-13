@@ -1,5 +1,6 @@
 package edu.es.eoi.user.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,43 +14,52 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.es.eoi.user.entity.Cliente;
+import edu.es.eoi.user.dto.ClienteDto;
+import edu.es.eoi.user.dto.CuentaDto;
 import edu.es.eoi.user.service.ClienteService;
 
 @RestController
 public class ClienteController {
 
 	@Autowired
-	ClienteService service;
-
+	ClienteService service;	
+		
+		
 	@GetMapping("clientes/{id}")
-	public ResponseEntity<Cliente> findClienteByIdUsuario(@PathVariable String dni) {
-		return ResponseEntity.ok(service.findClienteById(dni));
+	public ResponseEntity<ClienteDto> findClienteByIdUsuario(@PathVariable String id) {
+		return ResponseEntity.ok(service.findClienteById(id));
+	}
+	
+	@GetMapping("clientes/{id}/cuentas")
+	public ResponseEntity<List<CuentaDto>> findCuentasClienteByIdUsuario(@PathVariable String id) {
+		return ResponseEntity.ok(service.findCuentasClienteById(id));
 	}
 
 	@GetMapping("clientes")
-	public ResponseEntity<List<Cliente>> findAll() {
+	public ResponseEntity<List<ClienteDto>> findAll() {
 		return ResponseEntity.ok(service.findAll());
 	}
 
 	@PostMapping("clientes")
-	public ResponseEntity<String> createCliente(@RequestBody Cliente Cliente) {
-		service.createCliente(Cliente);
+	public ResponseEntity<String> createCliente(@RequestBody ClienteDto cliente) {
+		cliente.setFechaAlta(Calendar.getInstance().getTime());
+		service.createCliente(cliente);
 		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
 
 	@PutMapping("clientes/{id}")
-	public ResponseEntity<String> updateCliente(@PathVariable Integer id, @RequestBody Cliente Cliente) {
-
-		service.updateCliente(Cliente);
+	public ResponseEntity<String> updateCliente(@PathVariable String id, @RequestBody ClienteDto cliente) {
+		service.updateCliente(cliente);
 		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
 
 	}
 
 	@DeleteMapping("clientes/{id}")
-	public ResponseEntity<String> deleteByIdUsuario(@PathVariable String dni) {
-		service.deleteById(dni);
+	public ResponseEntity<String> deleteByIdUsuario(@PathVariable String id) {
+		service.deleteById(id);
 		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
 	}
+	
+	
 
 }
