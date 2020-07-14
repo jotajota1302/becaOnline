@@ -25,7 +25,7 @@ public class BancoRepository implements MyRepository<Banco>{
 
 	@Override
 	public void create(Banco e) {
-		manager.merge(e);		
+		manager.persist(e);		
 	}
 
 	@Override

@@ -25,7 +25,7 @@ public class CuentaRepository implements MyRepository<Cuenta>{
 
 	@Override
 	public void create(Cuenta e) {
-		manager.merge(e);		
+		manager.persist(e);		
 	}
 
 	@Override
