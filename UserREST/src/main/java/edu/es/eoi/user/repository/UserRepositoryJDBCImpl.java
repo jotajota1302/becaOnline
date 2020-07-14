@@ -40,7 +40,7 @@ public class UserRepositoryJDBCImpl implements MyRepository<User> {
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				entity = new User();
-				entity.setIdUsuario(rs.getInt("idUsuario"));
+				entity.setId(rs.getInt("id"));
 				entity.setNombre(rs.getString("nombre"));
 				entity.setFecha(rs.getDate("fecha"));
 				entity.setPremium(rs.getBoolean("premium"));
@@ -87,7 +87,7 @@ public class UserRepositoryJDBCImpl implements MyRepository<User> {
 			st.setDate(2, new Date(e.getFecha().getTime()));
 			st.setBoolean(3, e.getPremium());
 			st.setDouble(4, e.getSaldo());
-			st.setInt(5, e.getIdUsuario());
+			st.setInt(5, e.getId());
 
 			st.executeUpdate();
 
@@ -126,7 +126,7 @@ public class UserRepositoryJDBCImpl implements MyRepository<User> {
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				User entity = new User();
-				entity.setIdUsuario(rs.getInt("idUsuario"));
+				entity.setId(rs.getInt("id"));
 				entity.setNombre(rs.getString("nombre"));
 				entity.setFecha(rs.getDate("fecha"));
 				entity.setPremium(rs.getBoolean("premium"));

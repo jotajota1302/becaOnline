@@ -53,7 +53,7 @@ public class UserController {
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
 
-		if (!id.equals(user.getIdUsuario())) {
+		if (!id.equals(user.getId())) {
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		} else {
 			service.updateUser(user);
