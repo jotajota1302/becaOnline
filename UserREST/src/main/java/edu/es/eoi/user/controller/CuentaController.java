@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.es.eoi.user.entity.Cuenta;
+import edu.es.eoi.user.dto.CuentaDto;
 import edu.es.eoi.user.service.CuentaService;
 
 @RestController
@@ -23,23 +23,23 @@ public class CuentaController {
 	CuentaService service;
 
 	@GetMapping("cuentas/{id}")
-	public ResponseEntity<Cuenta> findCuentaByIdUsuario(@PathVariable Integer id) {
+	public ResponseEntity<CuentaDto> findCuentaByIdUsuario(@PathVariable Integer id) {
 		return ResponseEntity.ok(service.findCuentaById(id));
 	}
 
 	@GetMapping("cuentas")
-	public ResponseEntity<List<Cuenta>> findAll() {
+	public ResponseEntity<List<CuentaDto>> findAll() {
 		return ResponseEntity.ok(service.findAll());
 	}
 
 	@PostMapping("cuentas")
-	public ResponseEntity<String> createCuenta(@RequestBody Cuenta Cuenta) {
+	public ResponseEntity<String> createCuenta(@RequestBody CuentaDto Cuenta) {
 		service.createCuenta(Cuenta);
 		return new ResponseEntity<String>(HttpStatus.CREATED);
 	}
 
 	@PutMapping("cuentas/{id}")
-	public ResponseEntity<String> updateCuenta(@PathVariable Integer id, @RequestBody Cuenta Cuenta) {
+	public ResponseEntity<String> updateCuenta(@PathVariable Integer id, @RequestBody CuentaDto Cuenta) {
 		service.updateCuenta(Cuenta);
 		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
 

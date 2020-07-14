@@ -32,4 +32,5 @@ public class UserRestApplication {
 	public ModelMapper modelMapper() {
 	    return new ModelMapper();
 	}
+	
 }

@@ -22,7 +22,7 @@ public class ClienteService {
 	private ClienteRepository repository;
 	
 	@Autowired
-	ModelMapper modelMapper;	
+	ModelMapper modelMapper;
 	
 	public ClienteDto findClienteById(String dni) {
 		return convertToDto(repository.findById(dni));
@@ -42,11 +42,11 @@ public class ClienteService {
 	}
 
 	public void createCliente(ClienteDto dto) {
-		repository.create(dtoToEntity(dto));
+		repository.create(convertToEntity(dto));
 	}
 
 	public void updateCliente(ClienteDto dto) {
-		repository.update(dtoToEntity(dto));
+		repository.update(convertToEntity(dto));
 	}
 
 	public void deleteById(String dni) {
@@ -64,7 +64,7 @@ public class ClienteService {
 	    return modelMapper.map(entity,ClienteDto.class);	
 	}
 	
-	private Cliente dtoToEntity(ClienteDto dto) {	
+	private Cliente convertToEntity(ClienteDto dto) {	
 	    return modelMapper.map(dto,Cliente.class);	
 	}
 
