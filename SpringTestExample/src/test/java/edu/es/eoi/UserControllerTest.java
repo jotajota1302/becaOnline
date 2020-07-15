@@ -73,6 +73,7 @@ public class UserControllerTest {
 		ResponseEntity<String> response = restTemplate.postForEntity(
 				createURLWithPort(URI), new HttpEntity<>(entity, headers),
 				String.class);
+		
 		// Assert		
 		Assert.assertEquals(HttpStatus.CREATED, response.getStatusCode());
 	}
