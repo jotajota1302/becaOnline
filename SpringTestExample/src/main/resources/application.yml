@@ -7,4 +7,5 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update
-      
+server:
+  port: 8080   
