@@ -30,4 +30,5 @@ public class User {
 	@Column
 	private Double saldo;
 
+
 }
