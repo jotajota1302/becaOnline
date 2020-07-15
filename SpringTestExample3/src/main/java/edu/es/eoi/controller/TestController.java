@@ -5,6 +5,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,8 +18,7 @@ public class TestController {
 	RestTemplate restTemplate= new RestTemplate();
 	final String userRestUrl="http://localhost:8081/users/";
 	final String bancoRestUrl="http://localhost:8082/bancos/";
-
-
+	final String characterRestUrl="https://swapi.dev/api/api/people";
 	
 	@GetMapping("user/{id}")	
 	public ResponseEntity<User> findUserById(@PathVariable Integer id) {		
@@ -32,10 +32,14 @@ public class TestController {
 	}	
 	
 	@GetMapping("banco/{id}")	
-	public ResponseEntity findBancoById(@PathVariable Integer id) {
-		return restTemplate.exchange(bancoRestUrl+id,
+	public ResponseEntity<String> findBancoById(@PathVariable Integer id) {
+		return restTemplate.exchange(bancoRestUrl+id+"/",
 				HttpMethod.GET, new HttpEntity<>(headers), String.class);	
 	}	
 
+	@GetMapping("actor/{id}")	
+	public ResponseEntity<String> findActorById(@PathVariable String id) {			
+		return restTemplate.exchange("https://swapi.dev/api/people/"+id+"/",HttpMethod.GET, new HttpEntity<>(headers), String.class);	
+	}	
 	
 }
