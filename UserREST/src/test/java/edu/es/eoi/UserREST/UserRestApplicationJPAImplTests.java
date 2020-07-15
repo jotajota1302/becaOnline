@@ -18,7 +18,7 @@ import edu.es.eoi.user.service.UserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = UserRestApplication.class)
-class UserRestApplicationJPAImplTests2 {
+class UserRestApplicationJPAImplTests {
 	
 	@Autowired
 	@Qualifier("JPA")

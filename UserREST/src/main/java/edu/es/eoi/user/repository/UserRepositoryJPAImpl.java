@@ -45,7 +45,7 @@ public class UserRepositoryJPAImpl implements MyRepository<User>{
 
 	@Override
 	public List<User> findAll() {
-		return manager.createQuery("from User",User.class).
+		return manager.createQuery("from User ",User.class).
 				getResultStream().
 				collect(Collectors.toList());
 	}
