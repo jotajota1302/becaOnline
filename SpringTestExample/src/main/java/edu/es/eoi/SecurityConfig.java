@@ -15,10 +15,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{		
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{				
 		auth.inMemoryAuthentication()
 		    .withUser("JJ").password(passwordEncoder().encode("JJPW"))
-		    .authorities("ROLE_ADMIN");		
+		    .authorities("ROLE_ADMIN","ROLE_USER");		
 	}
 
 	@Override
