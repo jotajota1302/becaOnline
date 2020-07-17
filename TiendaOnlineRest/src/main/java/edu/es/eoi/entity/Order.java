@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -33,5 +34,8 @@ public class Order {
 
 	@ManyToMany(targetEntity = Product.class)
     private List<Product> products;
+	
+	@ManyToOne(targetEntity = Order.class)
+	private User User;
 	
 }
