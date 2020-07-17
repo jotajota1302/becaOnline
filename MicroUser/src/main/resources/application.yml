@@ -8,7 +8,7 @@ spring:
     hibernate:
       ddl-auto: update
   application:
-    name: MicroUser
+    name: micro-user
 server:
   port: 8081
 eureka:

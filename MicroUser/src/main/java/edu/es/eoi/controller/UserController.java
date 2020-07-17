@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.es.eoi.entity.User;
@@ -15,10 +16,17 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-	
+			
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> findAll(){		
 		return ResponseEntity.ok(service.findAll());
 	}
+	
+	@GetMapping("/users/{id}/products")	
+	public ResponseEntity<List<User>> findAllOrdersByUserId(@PathVariable Integer id){	
+		return null;
+			
+	}
+	
 	
 }

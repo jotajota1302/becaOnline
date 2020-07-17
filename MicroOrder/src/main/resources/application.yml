@@ -8,7 +8,7 @@ spring:
     hibernate:
       ddl-auto: update
   application:
-    name: MicroOrder
+    name: micro-order
 server:
   port: 8083
 eureka:
