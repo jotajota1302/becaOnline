@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.es.eoi.entity.Product;
 import edu.es.eoi.entity.User;
+import edu.es.eoi.feign.ProductInterface;
 import edu.es.eoi.service.UserService;
 
 @RestController
@@ -16,6 +18,9 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private ProductInterface feign;
 			
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> findAll(){		
@@ -23,9 +28,8 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/{id}/products")	
-	public ResponseEntity<List<User>> findAllOrdersByUserId(@PathVariable Integer id){	
-		return null;
-			
+	public ResponseEntity<List<Product>> findAllOrdersByUserId(@PathVariable Integer id){			
+		return feign.findAll();			
 	}
 	
 	
