@@ -1,0 +1,1 @@
+spring:  application:    name: micro-order  cloud:    config:     enabled: false     uri: http://${CONFIG_SERVER_URL:localhost}:${CONFIG_SERVER_PORT:8888}  main:    allow-bean-definition-overriding: true      management:  endpoints:    web:      exposure:        include: refresh

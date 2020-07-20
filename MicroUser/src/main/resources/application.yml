@@ -10,7 +10,7 @@ spring:
   application:
     name: micro-user
 server:
-  port: 8081
+  port: 0
 eureka:
   client:
     registerWithEureka: true
