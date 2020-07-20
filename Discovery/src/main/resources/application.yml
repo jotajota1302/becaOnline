@@ -1,5 +1,11 @@
 server:
   port: 8761  
+spring:
+  boot:
+    admin:
+      context-path: /admin  
+  main:
+    allow-bean-definition-overriding: true   
 eureka:
   client:
     registryFetchIntervalSeconds: 5
@@ -14,4 +20,10 @@ ribbon:
   http:
     client:
       enabled: true
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,actuator,metrics
+   
+        
