@@ -21,6 +21,6 @@ public class OrderDto {
 	
     private List<Integer> products;	
 	
-	private UserDto user;
+	private Integer user;
 	
 }

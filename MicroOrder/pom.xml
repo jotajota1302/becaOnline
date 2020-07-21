@@ -84,6 +84,11 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.es.eoi</groupId>
+			<artifactId>MicroOrderInterface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.es.eoi</groupId>
 			<artifactId>MicroUserInterface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 import edu.es.eoi.dto.UserDto;
 
-public interface UserInterfaceController extends InterfaceController<UserDto, Integer> {
+public interface UserInterfaceController {
 
 	@GetMapping("/users")
 	public ResponseEntity<List<UserDto>> findAll();
