@@ -1,7 +1,5 @@
 package edu.es.eoi.dto;
 
-import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,8 +17,6 @@ public class ProductDto {
 	
 	private String description;
 
-	private int stock;	
-
-	private List<Integer> orders;
+	private int stock;		
 	
 }
