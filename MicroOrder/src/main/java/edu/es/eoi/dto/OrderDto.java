@@ -18,9 +18,9 @@ public class OrderDto {
 	private String reference;	
 	
 	private Date orderDate;	
-
-    private List<ProductDto> products;	
-
-	private UserDto User;
+	
+    private List<Integer> products;	
+	
+	private UserDto user;
 	
 }

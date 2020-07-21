@@ -1,6 +1,7 @@
 package edu.es.eoi.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,10 @@ public class OrderService {
 	
 	public List<Order> findAll(){		
 		return repository.findAll();
+	}
+	
+	public Optional<Order> findById(Integer id){		
+		return repository.findById(id);
 	}
 	
 }

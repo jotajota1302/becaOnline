@@ -17,6 +17,6 @@ public class UserDto {
 		
 	private String role;
 		
-	List<OrderDto> orders;
+	List<Integer> orders;
 
 }

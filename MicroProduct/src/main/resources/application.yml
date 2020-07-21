@@ -31,4 +31,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh,actuator,health,metrics 
+        include: refresh,actuator,health,metrics,info
