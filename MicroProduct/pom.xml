@@ -80,6 +80,11 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.es.eoi</groupId>
+			<artifactId>CommonEntities</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.es.eoi</groupId>
 			<artifactId>MicroProductInterface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
