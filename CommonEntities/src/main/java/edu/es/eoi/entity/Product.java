@@ -32,9 +32,8 @@ public class Product {
 	@Column
 	private String description;
 	@Column
-	private int stock;
-	
+	private int stock;	
 	@ManyToMany(targetEntity = Order.class)
 	private List<Order> orders;
-	
+		
 }
