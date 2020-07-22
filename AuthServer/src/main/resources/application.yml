@@ -1,0 +1,31 @@
+server:
+  port: 8090
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_HOST:localhost}:${DISCOVERY_PORT:8761}/eureka/
+  instance:
+    hostname: auth
+    prefer-ip-address: true
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: auth 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,metrics,health,actuator
+security:
+  oauth2:
+    authorization:
+      check-token-access: isAuthenticated()
+      token-key-access: permitAll()
+    client:
+      clientId: ${AUTH_CLIENT_ID:web}
+      clientSecret: ${AUTH_CLIENT_SECRET:pass}
+      authorized-grant-types: authorization_code,refresh_token,password,check_token
+      scope: openid   
