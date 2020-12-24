@@ -35,7 +35,7 @@ public class UserController implements UserInterfaceController {
 
 	@Override
 	public ResponseEntity<UserDto> update(UserDto dto, Integer id) {
-		if(dto.getId()!=id) {
+		if(!dto.getId().equals(id)) {
 			return new ResponseEntity<UserDto>(HttpStatus.BAD_REQUEST);
 		}
 		service.create(dto);

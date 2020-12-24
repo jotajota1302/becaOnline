@@ -23,7 +23,7 @@ public class Shop {
 		ResponseEntity<ProductDto[]> response = restTemplate.getForEntity(urlProducts,ProductDto[].class);		
 		
 		ProductDto[] product = response.getBody();
-		
+						
 		System.out.println(product.length);
 
 		ResponseEntity<UserDto[]> users = restTemplate.getForEntity(urlUsers,UserDto[].class);		
